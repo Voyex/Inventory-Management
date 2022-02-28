@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+ul li{
+    float: left;
+}
+li a{
+    color: aliceblue;
+    display: block;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+.active{
+    background-color: green;
+}
+li a:hover{
+    background-color: brown;
+}
+.Homepage{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .H-nav{
+    background-color: gray;
+    height: 10vh;
+    width: 100%;
+  }
+  .H-content, .H-filter{
+    height: 90vh;
+  }
+  .H-content{
+    background-color: lightgray;
+    width: 80%;
+    flex: 3;
+  }
+  .H-filter{
+      background-color: gray;
+      width: 20%;
+      flex: 1;
+  }
