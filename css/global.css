@@ -1,0 +1,49 @@
+:root {
+    --hover-color: yellow;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    background-color: grey;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 3px
+}
+
+header a:hover {
+    color: var(--hover-color);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 3px
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}

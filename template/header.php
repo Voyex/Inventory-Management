@@ -12,9 +12,6 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
-
     
     <title><?= isset($PageTitle) ? $PageTitle : "Inv Manager" ?></title>
     <?php if (function_exists('customPageHeader')) {
