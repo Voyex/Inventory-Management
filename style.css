@@ -87,7 +87,7 @@ body {
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left, #0400ff, #00c3ff);
+  background: -webkit-linear-gradient(left, #1900ff, #0099ff);
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
@@ -150,7 +150,7 @@ input[type="radio"] {
 }
 
 .form-inner form .field input:focus {
-  border-color: #00c3ff;
+  border-color: #1900ff;
 }
 .form-inner form .field input::placeholder {
   color: #999;
@@ -160,7 +160,7 @@ form .field input:focus::placeholder {
   color: #b3b3b3;
 }
 
-.form-inner form .pass-link {
+.form-inner form .password-link {
   margin-top: 5px;
 }
 .form-inner form .signup-link {
@@ -168,13 +168,13 @@ form .field input:focus::placeholder {
   margin-top: 30px;
 }
 
-.form-inner form .pass-link a,
+.form-inner form .password-link a,
 .form-inner form .signup-link a {
-  color: #0400ff;
+  color: #1900ff;
   text-decoration: none;
 }
 
-.form-inner form .pass-link a:hover,
+.form-inner form .password-link a:hover,
 .form-inner form .signup-link a:hover {
   text-decoration: underline;
 }
@@ -193,10 +193,10 @@ form .btn .btn-layer {
   left: -100%;
   background: -webkit-linear-gradient(
     right,
-    #0400ff,
-    #00c3ff,
-    #0400ff,
-    #00c3ff
+    #1900ff,
+    #0099ff,
+    #1900ff,
+    #0099ff
   );
   border-radius: 5px;
   transition: all 0.4s ease;
