@@ -14,6 +14,9 @@ function customPageHeader()
 include_once('template/header.php');
 ?>
 
-<div>Hello World</div>
+<div class = "homepage">
+  <div class="filter">Filter</div>
+  <div class="content">Content box</div>
+</div>
 
 <?php include_once('template/footer.php');

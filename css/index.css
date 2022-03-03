@@ -1,34 +1,23 @@
-:root {
-    --hover-color: yellow;
-}
 
-body {
-    margin: 0;
-}
-
-header {
+.homepage {
     display: flex;
+    min-height: 100vh;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px;
-    background-color: grey;
+    flex-wrap: wrap;
 }
 
-header a {
-    color: white;
-    text-decoration: none;
-    padding: 3px
+.content, .filter{
+height: 90vh;
 }
 
-header a:hover {
-    color: var(--hover-color);
+.content{
+background-color: lightgray;
+width: 80%;
+flex: 3;
 }
 
-.nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 3px
+.filter{
+    background-color: gray;
+    width: 20%;
+    flex: 1;
 }
-

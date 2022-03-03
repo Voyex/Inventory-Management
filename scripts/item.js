@@ -9,8 +9,19 @@ window.addEventListener('resize', () => {
     imageContainer.style.maxHeight = `${containerDims}px`;
 });
 
+setDefualtImage();
+setStockColor();
+
 // Calls the resize event once when the page is loaded.
 window.dispatchEvent(new Event('resize'));
+
+// Sets default active image
+function setDefualtImage() {
+    const firstImage = document.getElementsByClassName('small-image')[0];
+    const activeImage = document.getElementById('active-image');
+
+    activeImage.setAttribute('src', firstImage.src);
+}
 
 function setActiveImage(smallImage) {
     const smallImages = document.getElementsByClassName('small-image');
@@ -62,4 +73,39 @@ function setImageContainerSize() {
     imageContainer.style.maxWidth = `${containerDims}px`;
     imageContainer.style.maxHeight = `${containerDims}px`;
     console.log('resize');
+}
+
+function setStockColor() {
+    const stockMessage = document.getElementById('stock-counter');
+    const nItemsInStock = parseInt(document.getElementById('stock-number').innerText);
+
+    if(nItemsInStock >= 6) return;
+
+    let fullColor = {
+        red: 50,
+        green: 200,
+        blue: 0
+    }
+    let emptyColor = {
+        red: 255,
+        green: 0,
+        blue: 0
+    }
+
+    calculateColor = (firstValue, secondValue, firstSimilarity, maxSimilarity) => {
+        // A ratio of how similar 2 colors are with 1 being the first color and 0 being the second
+        const simRatio = firstSimilarity / maxSimilarity;
+
+        const newFirst = firstValue * simRatio;
+        const newSecond = secondValue * (1 - simRatio);
+
+        return parseInt(newFirst + newSecond);
+    }
+
+    const combinedRed = calculateColor(fullColor.red, emptyColor.red, nItemsInStock, 6);
+    const combinedGreen = calculateColor(fullColor.green, emptyColor.green, nItemsInStock, 6);
+    const combinedBlue = calculateColor(fullColor.blue, emptyColor.blue, nItemsInStock, 6);
+
+    stockMessage.style.color = `rgb(${combinedRed}, ${combinedGreen}, ${combinedBlue})`    
+
 }

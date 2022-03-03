@@ -20,16 +20,17 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">
-            Inv Manager
-        </a>
-
         <nav>
-            <a href="#" class="nav-link">Profile</a>
-            <a href="#" class="nav-link">Admin Tools</a>
-            <a href="#" class="nav-link">Cart</a>
-            <a href="#" class="nav-link">Login</a>
-            <a href="#" class="nav-link">Signup</a>
+            <a href="index.php" class="logo">
+                Inv Manager
+            </a>
+
+            <ul>
+                <li><a href="#" class="nav-link">Profile</a></li>
+                <li><a href="#" class="nav-link">Admin</a></li>
+                <li><a href="#" class="nav-link">Cart</a></li>
+                <li><a href="login.php" class="nav-link">Login</a></li>
+            </ul>
         </nav>
     </header>
     <main>

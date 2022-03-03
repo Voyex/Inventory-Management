@@ -8,7 +8,11 @@ main {
     width: 80vw;
     max-width: 1200px;
     min-width: none;
-    overflow: hidden;
+    padding-top: 25px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .images {
@@ -34,16 +38,13 @@ main {
     margin-bottom: 8px;
     border-radius: 3px;
     border: 1px solid black;
-    max-height: 40px;
+    height:40px;
+    width: 40px;
     object-fit: contain;
 }
 
 .small-image:hover {
     transform: scale(1.1);
-}
-
-.small-image:active {
-    border-color: red;
 }
 
 .main-image {
@@ -55,7 +56,8 @@ main {
 
 .active-image {
     cursor: pointer;
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     object-fit: contain;
 }
 
@@ -83,4 +85,83 @@ main {
     top: 50px;
     right: 10px;
 
+}
+
+.item-info {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.stock-counter {
+    color: rgb(37, 124, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stock-counter > * {
+    margin: 5px 5px 0 5px;
+}
+
+.restock-counter {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.restock-counter > * {
+    margin: 0 3px;
+}
+
+.price-container {
+    margin: 10px 0;
+}
+
+.price-container > *{
+    display: inline;
+}
+
+.price-container .price, .price-container .symbol {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 10px 0;
+    padding: 30px 0;
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    border-radius: 1px;
+}
+
+.cart {
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 2em;
+}
+
+.cart:active {
+    transform: scale(.95);
 }
