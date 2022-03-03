@@ -14,17 +14,19 @@ function customPageHeader()
 include_once('template/header.php');
 ?>
 
-<script src="scripts/item.js"></script>
-
 <div class="content">
   <div class="images">
     <div class="side-images">
       <img class="small-image" src="images/shirt/white.webp" alt="A White T-Shirt" onmouseover="setActiveImage(this);">
       <img class="small-image" src="images/shirt/black.jpeg" alt="A Black T-Shirt" onmouseover="setActiveImage(this);">
     </div>
-    <img class="active-image" id="active-image" src="images/shirt/white.webp">
+    <div class="main-image" id="main-image">
+      <img class="active-image" id="active-image" src="images/shirt/white.webp" onclick="displayModal(this.src);">
+    </div>
   </div>
 </div>
+
+<script src="scripts/item.js"></script>
 
 <?php include_once('template/footer.php');
 // Dont place any code here
