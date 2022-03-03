@@ -32,3 +32,4 @@
             <a href="#" class="nav-link">Signup</a>
         </nav>
     </header>
+    <main>
