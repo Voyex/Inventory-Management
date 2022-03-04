@@ -1,13 +1,21 @@
 :root {
     --hover-color: yellow;
     --main-color: rgb(50,50,50);
-    --secondary-color: ;
+    --secondary-color: red;
     --line-color: lightgray;
 }
 
 ::selection {
     background: #fa4299;
     color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    color: transparent;
 }
 
 body {

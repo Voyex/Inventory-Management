@@ -44,9 +44,15 @@ include_once('template/header.php');
 
     <!-- This button needs to call a JS function that will pass the item id to the server which will add it to the cart. 
     Don't forget to update the number of items in the cart counter on click as well. -->
-    <div class="cart-container">
-      <button class="cart" onclick="">Add to cart</button>
+    <div class="cart-container" id="cart-container">
+      <button class="cart-incrementor hidden" onclick="addToCart(-1)">-</button>
+      <button class="cart" id="cart" onclick="addToCart(1)" contenteditable="false">Add to cart</button>
+      <button class="cart-incrementor hidden" onclick="addToCart(1)">+</button>
     </div>
+  </div>
+
+  <div class="markup">
+    <!-- Make sure to sanitize any input -->
   </div>
 </div>
 
