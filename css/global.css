@@ -1,0 +1,81 @@
+:root {
+    --hover-color: yellow;
+    --main-color: rgb(50,50,50);
+    --secondary-color: ;
+    --line-color: lightgray;
+}
+
+::selection {
+    background: #fa4299;
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    grid-area: header;
+
+    padding: 10px;
+    background-color: grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.7em;
+    font-weight: 100;    
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+header nav li {
+    margin: 0 5px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 3px
+}
+
+header a:hover {
+    color: var(--hover-color);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 3px
+}
+
+main {
+    grid-area: main;
+    background-color: gainsboro;
+}
+
+footer {
+    grid-area: footer;
+}

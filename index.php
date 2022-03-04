@@ -2,6 +2,9 @@
 #Variable that is used to set the title of the page.
 $PageTitle = "Inv Manager - Home";
 
+#Variable that is used to set the meta description of the page.
+$PageDesc = "A Short Descrption";
+
 function customPageHeader()
 { ?>
   <!-- Place custom HTML for the head tag here -->
@@ -10,5 +13,10 @@ function customPageHeader()
 <?php }
 include_once('template/header.php');
 ?>
+
+<div class = "homepage">
+  <div class="filter">Filter</div>
+  <div class="content">Content box</div>
+</div>
 
 <?php include_once('template/footer.php');
