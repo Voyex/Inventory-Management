@@ -52,22 +52,38 @@ li a:hover {
   justify-content: space-evenly;
   width: 100%;
 }
-.red {
-  width: 100%;
+.shirts {
+  display: flex;
   height: 100%;
-  background-color: red;
-  border: 1px solid black;
 }
-.blue {
-  width: 100%;
-  background-color: blue;
+.image {
   height: 100%;
-  border: 1px solid black;
+  display: block;
+  width: 100%;
 }
-.green {
+.description {
   width: 100%;
-  background-color: green;
+  padding: 20px;
+}
+
+.shirt-btn {
+  width: 100%;
   height: 100%;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+.button-shirt {
+  size: 2em;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.sweatshirts {
   border: 1px solid black;
 }
 
