@@ -52,9 +52,12 @@ li a:hover {
   justify-content: space-evenly;
   width: 100%;
 }
+
 .shirts {
+  background-color: white;
   display: flex;
   height: 100%;
+  border: 2px solid black;
 }
 .image {
   height: 100%;
@@ -62,29 +65,63 @@ li a:hover {
   width: 100%;
 }
 .description {
-  width: 100%;
+  width: 80%;
   padding: 20px;
 }
 
 .shirt-btn {
-  width: 100%;
+  width: 80%;
   height: 100%;
+
   display: flex;
   place-items: center;
   justify-content: center;
 }
 
 .button-shirt {
-  size: 2em;
+  font-size: 2em;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
 }
-
+.top {
+  font-size: 1.5em;
+}
 img {
   width: 100%;
   height: 100%;
 }
 
 .sweatshirts {
-  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.sweatshirt-image {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+.topSweat {
+  font-size: 1.5em;
+}
+
+.pants {
+  background-color: white;
+  display: flex;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.socks {
+  background-color: white;
+  display: flex;
+  height: 100%;
+  border: 2px solid black;
 }
 
 .H-filter {
