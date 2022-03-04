@@ -107,5 +107,36 @@ function setStockColor() {
     const combinedBlue = calculateColor(fullColor.blue, emptyColor.blue, nItemsInStock, 6);
 
     stockMessage.style.color = `rgb(${combinedRed}, ${combinedGreen}, ${combinedBlue})`    
+}
 
+function addToCart(toAdd) {
+    const cartButton = document.getElementById('cart');
+    let incrementors = document.getElementsByClassName('cart-incrementor');
+
+    let nItemsInCart = parseInt(cartButton.innerText);
+    console.log(nItemsInCart);
+
+    if(Number.isNaN(nItemsInCart)) {
+        nItemsInCart = 0;
+
+        incrementors[0].setAttribute('class', 'cart-incrementor rounded-left');
+        incrementors[1].setAttribute('class', 'cart-incrementor rounded-right')
+
+        cartButton.style.borderRadius = 0;
+    }
+
+    nItemsInCart += toAdd;
+
+    if(nItemsInCart < 1) {
+        nItemsInCart = "Add to cart";
+
+        for(button of incrementors) {
+            button.setAttribute('class', 'cart-incrementor hidden');
+        }
+
+        cartButton.style.borderRadius = '2em';
+    }
+
+    cartButton.innerText = nItemsInCart;
+    
 }
