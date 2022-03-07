@@ -53,6 +53,12 @@ include_once('template/header.php');
 
   <div class="markup">
     <!-- Make sure to sanitize any input -->
+    <h1 style="text-align: center">Description</h1>
+    <ul>
+      <li style="color: red;">This</li>
+      <li style="color: green;">is</li>
+      <li style="color: blue;">Markup</li>
+    </ul>
   </div>
 </div>
 
