@@ -23,14 +23,16 @@ include_once('template/header.php');
             </div>
             <div class="middle">
                 <h2>What color quantity do you want to change?</h2>
+                <p>Red, Blue, Green, Black, White</p>
                 <input type="text" class="sweat-qty" placeholder="Item color">
-                <h3>Quantity:</h2>
-                    <h2>New Quantity?</h2>
-                    <input type="text" class="sweat-qty" placeholder="Quantity">
+
+                <h2>New Quantity?</h2>
+                <input type="text" class="sweat-qty" placeholder="Quantity">
             </div>
         </div>
         <div class="shirt-btn">
             <button class="button-shirt">Confirm Change</button>
+            <h1>Quantity:</h1>
         </div>
     </div>
     <div class="sweatshirts">
@@ -43,14 +45,15 @@ include_once('template/header.php');
             </div>
             <div class="middle">
                 <h2>What color quantity do you want to change?</h2>
+                <p>Red, Blue, Green, Black, White</p>
                 <input type="text" class="sweat-qty" placeholder="Item color">
-                <h3>Quantity:</h3>
                 <h2>New Quantity?</h2>
                 <input type="text" class="sweat-qty" placeholder="Quantity">
             </div>
         </div>
         <div class="shirt-btn">
             <button class="button-shirt">Confirm Change</button>
+            <h1>Quantity:</h1>
         </div>
     </div>
     <div class="pants">
@@ -63,14 +66,15 @@ include_once('template/header.php');
             </div>
             <div class="middle">
                 <h2>What color quantity do you want to change?</h2>
+                <p>Red, Blue, Green, Black, White</p>
                 <input type="text" class="sweat-qty" placeholder="Item color">
-                <h3>Quantity:</h2>
-                    <h2>New Quantity?</h2>
-                    <input type="text" class="sweat-qty" placeholder="Quantity">
+                <h2>New Quantity?</h2>
+                <input type="text" class="sweat-qty" placeholder="Quantity">
             </div>
         </div>
         <div class="shirt-btn">
             <button class="button-shirt">Confirm Change</button>
+            <h1>Quantity:</h1>
         </div>
     </div>
     <div class="socks">
@@ -83,14 +87,15 @@ include_once('template/header.php');
             </div>
             <div class="middle">
                 <h2>What color quantity do you want to change?</h2>
+                <p>Red, Blue, Green, Black, White</p>
                 <input type="text" class="sweat-qty" placeholder="Item color">
-                <h3>Quantity:</h2>
-                    <h2>New Quantity?</h2>
-                    <input type="text" class="sweat-qty" placeholder="Quantity">
+                <h2>New Quantity?</h2>
+                <input type="text" class="sweat-qty" placeholder="Quantity">
             </div>
         </div>
         <div class="shirt-btn">
             <button class="button-shirt">Confirm Change</button>
+            <h1>Quantity:</h1>
         </div>
     </div>
 </div>
