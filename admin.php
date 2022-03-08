@@ -14,9 +14,9 @@ include_once('template/header.php');
 <div class="H-filter">Filter</div>
 <div class="H-content">
     <div class="shirts">
-        <div class="image">
+        <!--<div class="image">
             <img src="shirtpic.jpg" alt="Shirt Picture" />
-        </div>
+        </div>-->
         <div class="description">
             <div class="topSweat">
                 <h2>Shirts</h1>
@@ -34,9 +34,9 @@ include_once('template/header.php');
         </div>
     </div>
     <div class="sweatshirts">
-        <div class="sweatshirt-image">
+        <!--<div class="sweatshirt-image">
             <img src="sweatshirt1.jpg" alt="Sweatshirt Picture" />
-        </div>
+        </div>-->
         <div class="description">
             <div class="topSweat">
                 <h2>Sweatshirts</h1>
@@ -54,9 +54,9 @@ include_once('template/header.php');
         </div>
     </div>
     <div class="pants">
-        <div class="sweatshirt-image">
+        <!--<div class="sweatshirt-image">
             <img src="pants.jpg" alt="Sweatshirt Picture" />
-        </div>
+        </div>-->
         <div class="description">
             <div class="topSweat">
                 <h2>Pants</h1>
@@ -74,9 +74,9 @@ include_once('template/header.php');
         </div>
     </div>
     <div class="socks">
-        <div class="sweatshirt-image">
+        <!--<div class="sweatshirt-image">
             <img src="socks.jpg" alt="Sweatshirt Picture" />
-        </div>
+        </div>-->
         <div class="description">
             <div class="topSweat">
                 <h2>Socks</h1>
