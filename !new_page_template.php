@@ -8,12 +8,12 @@ function customPageHeader()
   <link rel="stylesheet" href="css/index.css" />
 
 <?php }
-include_once('/template/header.php');
+include_once('template/header.php');
 ?>
 
 <!-- HTML goes here 
 Note: Don't add body or head tags as they are in the header 
 and are closed in the footer. Pretend they already exist.-->
 
-<?php include_once('/template/footer.php');
+<?php include_once('template/footer.php');
 // Dont place any code here
