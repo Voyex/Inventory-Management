@@ -23,6 +23,7 @@ function setDefualtImage() {
     activeImage.setAttribute('src', firstImage.src);
 }
 
+// Changes the active image to the element passed into the function
 function setActiveImage(smallImage) {
     const smallImages = document.getElementsByClassName('small-image');
 
@@ -63,6 +64,8 @@ function displayModal(src) {
     });
 }
 
+// Function that sets the size of the main image to be the size of the images container
+// minus the size of the images sidebar.
 function setImageContainerSize() {
     const imageContainer = document.getElementById('main-image');
     const images = document.querySelector('.images');

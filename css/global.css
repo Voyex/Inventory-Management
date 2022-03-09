@@ -10,6 +10,60 @@
     color: #fff;
 }
 
+/* START of image container CSS */
+
+/* Styling for container of main-image and side-images */
+.images {
+    margin: 10px 0;
+    /* height: 500px; */
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* Container for small-image */
+.side-images {
+    width: 40px;
+
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Styling for image */
+.small-image {
+    cursor: pointer;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    border: 1px solid black;
+    height:40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+.small-image:hover {
+    transform: scale(1.1);
+}
+
+/* Container for active-image */
+.main-image {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling for image */
+.active-image {
+    cursor: pointer;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* END of image container CSS */
+
 .hidden {
     display: none;
 }
