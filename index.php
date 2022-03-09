@@ -15,72 +15,76 @@ include_once('template/header.php');
 ?>
 
 <div class="H-filter">Filter</div>
-      <div class="H-content">
-        <div class="shirts">
-          <div class="image">
-            <img src="shirtpic.jpg" alt="Shirt Picture" />
-          </div>
-          <div class="description">
-            <div class="top">
-              <h1>T-Shirts</h1>
-            </div>
-            <div class="middle">
-              <h2>Come in many sizes and colors</h2>
-            </div>
-          </div>
-          <div class="shirt-btn">
-            <button class="button-shirt">Buy Now!</button>
-          </div>
+<div class="H-content">
+  <div class="item">
+    <div class="main-image" >
+      <img src="shirtpic.jpg" alt="Shirt Picture" class="active-image" />
+    </div>
+    <div class="item-content">
+      <div class="description">
+        <div class="top">
+          <h1>T-Shirt</h1>
         </div>
-        <div class="sweatshirts">
-          <div class="sweatshirt-image">
-            <img src="sweatshirt1.jpg" alt="Sweatshirt Picture" />
-          </div>
-          <div class="description">
-            <div class="topSweat">
-              <h1>Sweatshirts</h1>
-            </div>
-            <div class="middle">
-              <h2>Come in many sizes and colors</h2>
-            </div>
-          </div>
-          <div class="shirt-btn">
-            <button class="button-shirt">Buy Now!</button>
-          </div>
+        <div class="middle">
+          <h2>Come in many sizes and colors</h2>
         </div>
-        <div class="pants">
-          <div class="sweatshirt-image">
-            <img src="pants.jpg" alt="Sweatshirt Picture" />
-          </div>
-          <div class="description">
-            <div class="topSweat">
-              <h1>Pants</h1>
-            </div>
-            <div class="middle">
-              <h2>Come in many sizes and colors</h2>
-            </div>
-          </div>
-          <div class="shirt-btn">
-            <button class="button-shirt">Buy Now!</button>
-          </div>
-        </div>
-        <div class="socks">
-          <div class="sweatshirt-image">
-            <img src="socks.jpg" alt="Sweatshirt Picture" />
-          </div>
-          <div class="description">
-            <div class="topSweat">
-              <h1>Socks</h1>
-            </div>
-            <div class="middle">
-              <h2>Come in many sizes and colors</h2>
-            </div>
-          </div>
-          <div class="shirt-btn">
-            <button class="button-shirt">Buy Now!</button>
-          </div>
-        </div>
+      </div>
+      <div class="shirt-btn">
+        <a class="button-shirt">Buy Now!</a>
+      </div>
+    </div>
+  </div>
+  <div class="sweatshirts">
+    <div class="main-image">
+      <img src="sweatshirt1.jpg" alt="Sweatshirt Picture" class="active-image"/>
+    </div>
+    <div class="description">
+      <div class="topSweat">
+        <h1>Sweatshirts</h1>
+      </div>
+      <div class="middle">
+        <h2>Come in many sizes and colors</h2>
+      </div>
+    </div>
+    <div class="shirt-btn">
+      <a class="button-shirt">Buy Now!</a>
+    </div>
+  </div>
+  <div class="pants">
+    <div class="main-image">
+      <img src="pants.jpg" alt="Sweatshirt Picture" class="active-image"/>
+    </div>
+    <div class="description">
+      <div class="topSweat">
+        <h1>Pants</h1>
+      </div>
+      <div class="middle">
+        <h2>Come in many sizes and colors</h2>
+      </div>
+    </div>
+    <div class="shirt-btn">
+      <a class="button-shirt">Buy Now!</a>
+    </div>
+  </div>
+  <div class="socks">
+    <div class="main-image">
+      <img src="socks.jpg" alt="Sweatshirt Picture" class="active-image"/>
+    </div>
+    <div class="description">
+      <div class="topSweat">
+        <h1>Socks</h1>
+      </div>
+      <div class="middle">
+        <h2>Come in many sizes and colors</h2>
+      </div>
+    </div>
+    <div class="shirt-btn">
+      <a class="button-shirt">Buy Now!</a>
+    </div>
+  </div>
 </div>
-</div>
+
+<script src="scripts/script.js"></script>
+
 
 <?php include_once('template/footer.php');

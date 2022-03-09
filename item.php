@@ -1,6 +1,6 @@
 <?php
 #Variable that is used to set the title of the page.
-$PageTitle = "Inv Manager - Template";
+$PageTitle = "Inv Manager - Item";
 
 #Variable that is used to set the meta description of the page.
 $PageDesc = "A Short Descrption";
