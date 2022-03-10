@@ -6,7 +6,7 @@
 }
 
 ::selection {
-    background: #fa4299;
+    background: blueviolet;
     color: #fff;
 }
 
@@ -140,4 +140,6 @@ main {
 
 footer {
     grid-area: footer;
+    background-color: black;
+    color: white;
 }

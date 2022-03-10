@@ -17,81 +17,74 @@ include_once('template/header.php');
 <div class="H-filter">
   <label for="dropdown" id="dropdown-label">Filter &and;</label>
   <input type="checkbox" name="dropdown" class="dropdown" id="dropdown" autocomplete="off" onclick="toggleFilterDropdown(this)" />
-  <div class="filter-content">
-    Lorem ipsum
-  </div>
+  <ul class="filter-content">
+    <li>Lorem ipsum</li>
+  </ul>
 </div>
+
+<form action="" class="search">
+  <input type="text" id="search-bar" placeholder="Search..."/><input type="submit" value="Search">
+</form>
 
 <div class="H-content">
   <div class="item">
-    <div class="main-image" >
+    <a class="main-image" href="item.php">
       <img src="shirtpic.jpg" alt="Shirt Picture" class="active-image" />
-    </div>
+    </a>
     <div class="item-content">
-      <div class="description">
         <div class="top">
-          <h1>T-Shirt</h1>
+          <a href="item.php" class="item-name">T-Shirts</a>
         </div>
-        <div class="middle">
-          <h2>Come in many sizes and colors</h2>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
+        </p>
+        <!-- <button class="button-shirt">Buy Now!</button> -->
+    </div>
+</div>
+<div class="item">
+    <a class="main-image" href="item.php">
+      <img src="sweatshirt.webp" alt="Shirt Picture" class="active-image" />
+    </a>
+    <div class="item-content">
+        <div class="top">
+          <a href="item.php" class="item-name">Sweatshirts</a>
         </div>
-      </div>
-      <div class="shirt-btn">
-        <a class="button-shirt">Buy Now!</a>
-      </div>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
+        </p>
+        <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-  </div>
-  <div class="sweatshirts">
-    <div class="main-image">
-      <img src="sweatshirt1.jpg" alt="Sweatshirt Picture" class="active-image"/>
+</div>
+<div class="item">
+    <a class="main-image" href="item.php">
+      <img src="pants.jpg" alt="Shirt Picture" class="active-image" />
+    </a>
+    <div class="item-content">
+        <div class="top">
+          <a href="item.php" class="item-name">Pants</a>
+        </div>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
+        </p>
+        <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-    <div class="description">
-      <div class="topSweat">
-        <h1>Sweatshirts</h1>
-      </div>
-      <div class="middle">
-        <h2>Come in many sizes and colors</h2>
-      </div>
+</div>
+<div class="item">
+    <a class="main-image" href="item.php">
+      <img src="socks.jpg" alt="Shirt Picture" class="active-image" />
+    </a>
+    <div class="item-content">
+        <div class="top">
+          <a href="item.php" class="item-name">Socks</a>
+        </div>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
+        </p>
+        <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-    <div class="shirt-btn">
-      <a class="button-shirt">Buy Now!</a>
-    </div>
-  </div>
-  <div class="pants">
-    <div class="main-image">
-      <img src="pants.jpg" alt="Sweatshirt Picture" class="active-image"/>
-    </div>
-    <div class="description">
-      <div class="topSweat">
-        <h1>Pants</h1>
-      </div>
-      <div class="middle">
-        <h2>Come in many sizes and colors</h2>
-      </div>
-    </div>
-    <div class="shirt-btn">
-      <a class="button-shirt">Buy Now!</a>
-    </div>
-  </div>
-  <div class="socks">
-    <div class="main-image">
-      <img src="socks.jpg" alt="Sweatshirt Picture" class="active-image"/>
-    </div>
-    <div class="description">
-      <div class="topSweat">
-        <h1>Socks</h1>
-      </div>
-      <div class="middle">
-        <h2>Come in many sizes and colors</h2>
-      </div>
-    </div>
-    <div class="shirt-btn">
-      <a class="button-shirt">Buy Now!</a>
-    </div>
-  </div>
+</div>
 </div>
 
 <script src="scripts/script.js"></script>
-
 
 <?php include_once('template/footer.php');
