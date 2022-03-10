@@ -14,7 +14,14 @@ function customPageHeader()
 include_once('template/header.php');
 ?>
 
-<div class="H-filter">Filter</div>
+<div class="H-filter">
+  <label for="dropdown" id="dropdown-label">Filter &and;</label>
+  <input type="checkbox" name="dropdown" class="dropdown" id="dropdown" autocomplete="off" onclick="toggleFilterDropdown(this)" />
+  <div class="filter-content">
+    Lorem ipsum
+  </div>
+</div>
+
 <div class="H-content">
   <div class="item">
     <div class="main-image" >
