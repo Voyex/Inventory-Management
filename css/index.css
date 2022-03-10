@@ -6,7 +6,6 @@ main {
 /*.H-content*/
 
 .H-filter {
-  background-color: yellow;
   text-align: center;
   display: flex;
   flex-direction: column;
