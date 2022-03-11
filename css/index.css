@@ -46,6 +46,7 @@ main {
   display: grid;
   flex: 3;
   height: 100%;
+  width: 100%;
 }
 
 .item {
@@ -68,6 +69,7 @@ main {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  width: 100%;
 }
 
 .filter-content {
@@ -86,7 +88,6 @@ main {
   display: block;
   width: 100%;
 }
-
 
 .item-name {
   text-decoration: none;
