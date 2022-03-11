@@ -14,19 +14,19 @@ function customPageHeader()
 include_once('template/header.php');
 ?>
 
-<div class="H-filter">
-  <label for="dropdown" id="dropdown-label">Filter &and;</label>
+<form action="POST" class="search">
+  <input type="text" id="search-bar" class="search-bar" placeholder="Search..."/><input type="submit" class="search-button" value="Search">
+</form>
+
+<div class="filter">
+  <label for="dropdown" id="dropdown-label">Filter +</label>
   <input type="checkbox" name="dropdown" class="dropdown" id="dropdown" autocomplete="off" onclick="toggleFilterDropdown(this)" />
   <ul class="filter-content">
     <li>Lorem ipsum</li>
   </ul>
 </div>
 
-<form action="" class="search">
-  <input type="text" id="search-bar" placeholder="Search..."/><input type="submit" value="Search">
-</form>
-
-<div class="H-content">
+<div class="content">
   <div class="item">
     <a class="main-image" href="item.php">
       <img src="shirtpic.jpg" alt="Shirt Picture" class="active-image" />

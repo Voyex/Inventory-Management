@@ -42,6 +42,43 @@ include_once('template/header.php');
       <div>Price: </div><div class="symbol">$</div><div class="price">14.00</div>
     </div>
 
+    <div class="options">
+      <div class="colors">
+        <p>Color:</p>
+        <label for="white">
+          <div class="color-containter">
+            <div class="color" style="background-color: white"></div>
+          </div>
+        </label>
+        <input type="checkbox" name="white" id="white">
+
+        <label for="red">
+          <div class="color-containter">
+            <div class="color" style="background-color: red"></div>
+          </div>
+        </label>
+        <input type="checkbox" name="red" id="red" onclick="selectBox(this.id);">
+
+        <label for="black">
+          <div class="color-containter">
+            <div class="color" style="background-color: black"></div>
+          </div>
+        </label>
+        <input type="checkbox" name="black" id="black">
+      </div>
+      <div class="sizes">
+        <p>Size: </p>
+        <select name="sizes" id="">
+          <option value="0">XS</option>
+          <option value="1">S</option>
+          <option value="2">M</option>
+          <option value="3">L</option>
+          <option value="4">XL</option>
+          <option value="5">XXL</option>
+        </select>
+      </div>
+    </div>
+
     <!-- This button needs to call a JS function that will pass the item id to the server which will add it to the cart. 
     Don't forget to update the number of items in the cart counter on click as well. -->
     <div class="cart-container" id="cart-container">

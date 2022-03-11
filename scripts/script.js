@@ -13,10 +13,10 @@ function toggleFilterDropdown(checkbox) {
 
     if(checkbox.checked) {
         filterContent.style.display = 'block';
-        buttonLabel.innerHTML = 'Filter &or;';
+        buttonLabel.innerHTML = 'Filter &#45;';
     } else {
         filterContent.style.display = 'none';
-        buttonLabel.innerHTML = 'Filter &and;';
+        buttonLabel.innerHTML = 'Filter &#43;';
     } 
 
     

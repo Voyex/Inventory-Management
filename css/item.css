@@ -142,6 +142,60 @@ main {
     font-size: 1.2em;
 }
 
+.options {
+    width: 80%;
+    border-top: 1px solid var(--line-color);
+}
+
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.colors p {
+    width: 100%;
+}
+
+.colors input {
+    display: none;
+}
+
+.color-containter {
+    background-color: gainsboro;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.color {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}
+
+.sizes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sizes p {
+    width: min-content;
+    padding-right: 5px;
+}
+
+.sizes select {
+    height: min-content;
+}
+
 .cart-container {
     width: 80%;
     margin: 10px 0;
