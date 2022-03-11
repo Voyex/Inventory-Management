@@ -37,10 +37,14 @@ include_once('template/header.php');
         <input class="colorText" type="text">
         <p class="padd">Quantity= </p>
         <input class="quantityText" type="text">
+        <button class="confirm">Confirm</button>
       </div>
-      <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-      </p>
+      <div class="containNewQty">
+        <p class="description">
+          New Quantity =
+        </p>
+        <input type="0" class="output" disabled>
+      </div>
       <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
   </div>
@@ -57,10 +61,15 @@ include_once('template/header.php');
         <input class="colorText" type="text">
         <p class="padd">Quantity= </p>
         <input class="quantityText" type="text">
+        <button class="confirm">Confirm</button>
+
       </div>
-      <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-      </p>
+      <div class="containNewQty">
+        <p class="description">
+          New Quantity =
+        </p>
+        <input type="0" class="output" disabled>
+      </div>
       <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
   </div>
@@ -77,10 +86,15 @@ include_once('template/header.php');
         <input class="colorText" type="text">
         <p class="padd">Quantity= </p>
         <input class="quantityText" type="text">
+        <button class="confirm">Confirm</button>
+
       </div>
-      <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-      </p>
+      <div class="containNewQty">
+        <p class="description">
+          New Quantity =
+        </p>
+        <input type="0" class="output" disabled>
+      </div>
       <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
   </div>
@@ -97,10 +111,15 @@ include_once('template/header.php');
         <input class="colorText" type="text">
         <p class="padd">Quantity= </p>
         <input class="quantityText" type="text">
+        <button class="confirm">Confirm</button>
+
       </div>
-      <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-      </p>
+      <div class="containNewQty">
+        <p class="description">
+          New Quantity =
+        </p>
+        <input type="text" class="output" placeholder="0" disabled>
+      </div>
       <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
   </div>
