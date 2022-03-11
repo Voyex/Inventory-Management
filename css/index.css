@@ -21,6 +21,17 @@ main {
 .search label {
 }
 
+.containQty {
+  display: flex;
+}
+
+.colorText {
+  margin-left: 10px;
+}
+.padd {
+  margin-left: 20px;
+}
+
 .H-content {
   background-color: lightgray;
   display: grid;
@@ -66,7 +77,6 @@ main {
   display: block;
   width: 100%;
 }
-
 
 .item-name {
   text-decoration: none;
