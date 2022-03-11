@@ -23,6 +23,7 @@ main {
 
 .containQty {
   margin-top: 20px;
+  width: 100%;
   display: flex;
 }
 
@@ -75,6 +76,7 @@ main {
   display: grid;
   flex: 3;
   height: 100%;
+  width: 100%;
 }
 
 .item {
@@ -97,6 +99,7 @@ main {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  width: 100%;
 }
 
 .filter-content {
