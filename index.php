@@ -15,7 +15,7 @@ include_once('template/header.php');
 ?>
 
 <form action="POST" class="search">
-  <input type="text" id="search-bar" class="search-bar" placeholder="Search..."/><input type="submit" class="search-button" value="Search">
+  <input type="text" id="search-bar" class="search-bar" placeholder="Search..." /><input type="submit" class="search-button" value="Search">
 </form>
 
 <div class="filter">
@@ -32,57 +32,61 @@ include_once('template/header.php');
       <img src="shirtpic.jpg" alt="Shirt Picture" class="active-image" />
     </a>
     <div class="item-content">
-        <div class="top">
-          <a href="item.php" class="item-name">T-Shirts</a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-        </p>
-        <!-- <button class="button-shirt">Buy Now!</button> -->
+      <div class="top">
+        <a href="item.php" class="item-name">T-Shirts</a>
+      </div>
+      <p class="description">
+        Men and Woman's T-Shirts, Casual Fitting and come in many sizes and colors
+      </p>
+      <h3>Price: $18.00</h3>
+      <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-</div>
-<div class="item">
+  </div>
+  <div class="item">
     <a class="main-image" href="item.php">
       <img src="sweatshirt.webp" alt="Shirt Picture" class="active-image" />
     </a>
     <div class="item-content">
-        <div class="top">
-          <a href="item.php" class="item-name">Sweatshirts</a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-        </p>
-        <!-- <button class="button-shirt">Buy Now!</button> -->
+      <div class="top">
+        <a href="item.php" class="item-name">Sweatshirts</a>
+      </div>
+      <p class="description">
+        Men and Woman's Sweatshirts, Casual Fitting and come in many sizes and colors
+      </p>
+      <h3>Price: $28.00</h3>
+      <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-</div>
-<div class="item">
+  </div>
+  <div class="item">
     <a class="main-image" href="item.php">
       <img src="pants.jpg" alt="Shirt Picture" class="active-image" />
     </a>
     <div class="item-content">
-        <div class="top">
-          <a href="item.php" class="item-name">Pants</a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-        </p>
-        <!-- <button class="button-shirt">Buy Now!</button> -->
+      <div class="top">
+        <a href="item.php" class="item-name">Pants</a>
+      </div>
+      <p class="description">
+        Men and Woman's Pants, Casual Fitting and come in many sizes and colors
+      </p>
+      <h3>Price: $30.00</h3>
+      <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-</div>
-<div class="item">
+  </div>
+  <div class="item">
     <a class="main-image" href="item.php">
       <img src="socks.jpg" alt="Shirt Picture" class="active-image" />
     </a>
     <div class="item-content">
-        <div class="top">
-          <a href="item.php" class="item-name">Socks</a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus voluptatem nesciunt praesentium ullam eos architecto odio perferendis cupiditate numquam amet magni, reiciendis commodi, voluptas eum hic eaque ex neque?
-        </p>
-        <!-- <button class="button-shirt">Buy Now!</button> -->
+      <div class="top">
+        <a href="item.php" class="item-name">Socks</a>
+      </div>
+      <p class="description">
+        Men and Woman's T-Shirts, Casual Fitting and come in many sizes and colors
+      </p>
+      <h3>Price: $8.00</h3>
+      <!-- <button class="button-shirt">Buy Now!</button> -->
     </div>
-</div>
+  </div>
 </div>
 
 <script src="scripts/script.js"></script>
