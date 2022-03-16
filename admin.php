@@ -47,6 +47,29 @@ include_once('template/header.php');
         <td><button>Edit</button></td>
         <td><button>Delete</button></td>
       </tr>
+      <tr>
+        <td>A1B1C1</td>
+        <td>Sweatshirts</td>
+        <td>40.00</td>
+        <td>30.00</td>
+        <td>13</td>
+        <td>32</td>
+        <td>1</td>
+        <td><button>Edit</button></td>
+        <td><button>Delete</button></td>
+      </tr>
+      <tr>
+        <td>A2B2C2</td>
+        <td>Socks</td>
+        <td>12.00</td>
+        <td>8.00</td>
+        <td>34</td>
+        <td>21</td>
+        <td>0</td>
+        <td><button>Edit</button></td>
+        <td><button>Delete</button></td>
+      </tr>
+
     </table>
   </form>
 </div>
