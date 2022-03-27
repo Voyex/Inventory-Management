@@ -1,0 +1,17 @@
+body{
+    padding-top: 40px;
+    background-color: #ccffe6;
+}
+.container{
+    margin-left: 50px;
+    
+}
+#info{
+    font-size: 18px;
+    line-height: 1.5em;
+    
+}
+.passwordField{
+    line-height: 3em;
+    font-size: 16px;
+}
