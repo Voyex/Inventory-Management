@@ -28,9 +28,9 @@ session_start();
             </a>
 
             <ul>
-                <li><a href="#" class="nav-link">Profile</a></li>
+                <li><a href="profile.php" class="nav-link">Profile</a></li>
                 <li><a href="admin.php" class="nav-link">Admin</a></li>
-                <li><a href="#" class="nav-link">Cart</a></li>
+                <li><a href="cart.php" class="nav-link">Cart</a></li>
                 <li><a href="login.php" class="nav-link">Login</a></li>
             </ul>
         </nav>
