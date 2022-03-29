@@ -5,7 +5,7 @@ $PageTitle = "Inv Manager - Template";
 function customPageHeader()
 { ?>
     <!-- Place additional HTML for the head tag here -->
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/cart.css" />
 
 <?php }
 include_once('template/header.php');
