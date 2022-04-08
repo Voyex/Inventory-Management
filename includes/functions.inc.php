@@ -11,7 +11,7 @@
  * @param pwdRepeat - the repeat password entered in the second password input field
  */
 function emptySingupInput($username, $email, $pwd, $pwdRepeat) {
-    $result;
+    $result = null;
 
     if (empty($username) || empty($email) || empty($pwd) || empty($pwdRepeat)) {
         $result = true;
@@ -27,7 +27,7 @@ function emptySingupInput($username, $email, $pwd, $pwdRepeat) {
  * @param username - the username from the username input field
  */
 function invalidUsername($username) {
-    $result;
+    $result = false;
 
     if(!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
@@ -43,7 +43,7 @@ function invalidUsername($username) {
  * @param email - users email from the email input field
  */
 function invalidEmail($email) {
-    $result;
+    $result = false;
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
@@ -59,7 +59,7 @@ function invalidEmail($email) {
  * @param pwdRepeat -
  */
 function pwdDoesntMatch($pwd, $pwdRepeat) {
-    $result;
+    $result = false;
 
     if($pwd !== $pwdRepeat) {
         $result = true;
@@ -154,7 +154,7 @@ function createUser($conn, $email, $username, $pwd) {
     exit();
 }
 function emptyLoginInput($username, $pwd) {
-    $result;
+    $result = false;
 
     if (empty($username) || empty($pwd)) {
         $result = true;
@@ -187,7 +187,7 @@ function loginUser($conn, $username, $pwd) {
         exit();
     }
 }
-function getUID($connect, $username) {
+function getUID($conn, $username) {
 	   $sql = "SELECT id FROM users WHERE username = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
