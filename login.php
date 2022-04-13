@@ -5,7 +5,7 @@ $PageTitle = "Inv Manager - Login";
 function customPageHeader()
 { ?>
   <!-- Place custom HTML for the head tag here -->
-  <link rel="stylesheet" href="/css/login.css" />
+  <link rel="stylesheet" href="css/login.css" />
 
 <?php }
 include_once('template/header.php');
@@ -25,45 +25,38 @@ include_once('template/header.php');
       <div class="slider-tab"></div>
     </div>
     <div class="form-inner">
-      <form action="#" class="login">
+      <form action="includes/login.inc.php" method="$_POST" class="login">
         <div class="field">
-          <input type="text" placeholder="Email Address" required />
+          <input type="text" name="email" placeholder="Email Address" required />
         </div>
         <div class="field">
-          <input type="password" placeholder="Password" required />
+          <input type="password" name="pwd" placeholder="Password" required />
         </div>
         <div class="pass-link">
           <a href="#">Forgot password?</a>
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
-          <input
-            type="submit"
-            value="Login"
-            onclick="window.location.href='index.php'"
-          />
+          <input type="submit" name="submit" value="Login"/>
         </div>
         <div class="signup-link">
           Not a member? <a href="">Signup now</a>
         </div>
       </form>
-      <form action="#" class="signup">
+      <form action="includes/signup.inc.php" method="post" class="signup">
         <div class="field">
-          <input type="text" placeholder="Email Address" required />
+          <input type="text" name="email" placeholder="Email Address" required />
         </div>
         <div class="field">
-          <input type="password" placeholder="Password" required />
+          <input type="password" name="pwd" placeholder="Password" required />
         </div>
         <div class="field">
-          <input type="password" placeholder="Confirm password" required />
+          <input type="password" name="pwdrepeat" placeholder="Confirm password" required />
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
           <input
-            type="submit"
-            value="Signup"
-            onclick="window.location.href='index.php'"
-          />
+            type="submit" name="submit" value="Signup"/>
         </div>
       </form>
     </div>

@@ -10,10 +10,10 @@
  * @param pwd - password entered in the password input field
  * @param pwdRepeat - the repeat password entered in the second password input field
  */
-function emptySingupInput($username, $email, $pwd, $pwdRepeat) {
+function emptySingupInput($email, $pwd, $pwdRepeat) {
     $result = null;
 
-    if (empty($username) || empty($email) || empty($pwd) || empty($pwdRepeat)) {
+    if (empty($email) || empty($pwd) || empty($pwdRepeat)) {
         $result = true;
     } else {
     $result = false;
@@ -73,7 +73,7 @@ function eitherExists($conn, $username, $email) {
     $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailure");
+        header("location: ../login.php?error=stmtfailure2");
         exit();   
     }
 
@@ -95,7 +95,7 @@ function usernameExists($conn, $username) {
     $sql = "SELECT * FROM users WHERE username = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailure");
+        header("location: ../login.php?error=stmtfailure3");
         exit();   
     }
 
@@ -104,7 +104,7 @@ function usernameExists($conn, $username) {
 
     $stmtResult = mysqli_stmt_get_result($stmt);
 
-    if ($row =mysqli_fetch_assoc($stmtResult)) {
+    if ($row = mysqli_fetch_assoc($stmtResult)) {
         return $row;
     } else {
         $result = false;
@@ -117,7 +117,7 @@ function emailUsed($conn, $email) {
     $sql = "SELECT * FROM users WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailure");
+        header("location: ../login.php?error=stmtfailure4");
         exit();   
     }
 
@@ -136,27 +136,27 @@ function emailUsed($conn, $email) {
 }
 
 
-function createUser($conn, $email, $username, $pwd) {
-    $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?);";
+function createUser($conn, $email, $pwd) {
+    $sql = "INSERT INTO users (password, email) VALUES (?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailure");
+        header("location: ../login.php?error=stmtfailure1");
         exit();   
     }
 
     $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sss", $email, $hashpwd, $username);
+    mysqli_stmt_bind_param($stmt, "ss", $hashpwd, $email);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
     header("location: ../login.php?error=none");
     exit();
 }
-function emptyLoginInput($username, $pwd) {
+function emptyLoginInput($email, $pwd) {
     $result = false;
 
-    if (empty($username) || empty($pwd)) {
+    if (empty($email) || empty($pwd)) {
         $result = true;
     } else {
     $result = false;
@@ -164,8 +164,8 @@ function emptyLoginInput($username, $pwd) {
     return $result;
 }
 
-function loginUser($conn, $username, $pwd) {
-    $loginExists = eitherExists($conn, $username, $username);
+function loginUser($conn, $email, $pwd) {
+    $loginExists = emailUsed($conn, $email);
 
     if ($loginExists === false) {
         header("location: ../login.php?error=incorrectlogin");
@@ -178,12 +178,13 @@ function loginUser($conn, $username, $pwd) {
     if ($checkPwd === false) {
         header("location: ../login.php?error=incorrectlogin");
         exit();
-    } else if ($checkPwd === true) {
+    } 
+    else if ($checkPwd === true) {
         session_start();
         $_SESSION["userID"] = $loginExists["id"];
-        $_SESSION["username"] = $loginExists["username"];
-        createUserDir($_SESSION["userID"]);
-        header("location: copySettings.inc.php");
+        $_SESSION["email"] = $loginExists["email"];
+        // createUserDir($_SESSION["userID"]);
+        header("location: ../index.php?error=none");
         exit();
     }
 }
@@ -191,7 +192,7 @@ function getUID($conn, $username) {
 	   $sql = "SELECT id FROM users WHERE username = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailure");
+        header("location: ../login.php?error=stmtfailure5");
         exit();   
     }
 

@@ -9,7 +9,7 @@ $dBName = "invdb";
 //var that stores the mysqli connection info
 $conn = mysqli_connect($serverName, $dbUsername, $dBPassword, $dBName);
 
-//Checks tha the connection was successful
+//Checks that the connection was successful
 if (!$conn) {
     header('Location: ../index.php?error=connecterror');
     die("Connection failed: " . mysqli_connect_error());
