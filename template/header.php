@@ -1,5 +1,10 @@
 <?php
 session_start();
+// Initialize Twig
+require_once "vendor/autoload.php";
+
+$loader = new \Twig\Loader\FilesystemLoader('views');
+$twig = new \Twig\Environment($loader);
 ?>
 
 <!DOCTYPE html>
