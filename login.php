@@ -25,7 +25,7 @@ include_once('template/header.php');
       <div class="slider-tab"></div>
     </div>
     <div class="form-inner">
-      <form action="includes/login.inc.php" method="$_POST" class="login">
+      <form action="includes/login.inc.php" method="post" class="login">
         <div class="field">
           <input type="text" name="email" placeholder="Email Address" required />
         </div>
