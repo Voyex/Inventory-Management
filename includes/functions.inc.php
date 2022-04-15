@@ -70,7 +70,8 @@ function pwdDoesntMatch($pwd, $pwdRepeat) {
 }
 
 function eitherExists($conn, $username, $email) {
-    $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
+    $sql = "SELECT * FROM user
+     WHERE username = ? OR email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../login.php?error=stmtfailure2");
@@ -92,7 +93,7 @@ function eitherExists($conn, $username, $email) {
 }
 
 function usernameExists($conn, $username) {
-    $sql = "SELECT * FROM users WHERE username = ?;";
+    $sql = "SELECT * FROM user WHERE username = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../login.php?error=stmtfailure3");
@@ -114,7 +115,7 @@ function usernameExists($conn, $username) {
 }
 
 function emailUsed($conn, $email) {
-    $sql = "SELECT * FROM users WHERE email = ?;";
+    $sql = "SELECT * FROM user WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../login.php?error=stmtfailure4");
@@ -126,7 +127,7 @@ function emailUsed($conn, $email) {
 
     $stmtResult = mysqli_stmt_get_result($stmt);
 
-    if ($row =mysqli_fetch_assoc($stmtResult)) {
+    if ($row = mysqli_fetch_assoc($stmtResult)) {
         return $row;
     } else {
         $result = false;
@@ -137,7 +138,7 @@ function emailUsed($conn, $email) {
 
 
 function createUser($conn, $email, $pwd) {
-    $sql = "INSERT INTO users (password, email) VALUES (?, ?);";
+    $sql = "INSERT INTO user (password, email) VALUES (?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../login.php?error=stmtfailure1");
@@ -181,15 +182,14 @@ function loginUser($conn, $email, $pwd) {
     } 
     else if ($checkPwd === true) {
         session_start();
-        $_SESSION["userID"] = $loginExists["userID"];
+        $_SESSION["userID"] = $loginExists["id"];
         $_SESSION["email"] = $loginExists["email"];
-        // createUserDir($_SESSION["userID"]);
         header("location: ../index.php?error=none");
         exit();
     }
 }
 function getUID($conn, $username) {
-	   $sql = "SELECT userID FROM users WHERE username = ?;";
+	   $sql = "SELECT id FROM user WHERE username = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../login.php?error=stmtfailure5");
@@ -202,7 +202,7 @@ function getUID($conn, $username) {
     $stmtResult = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($stmtResult);
     
-    $uid = $row["userID"];
+    $uid = $row["id"];
     mysqli_stmt_close($stmt);
 	return $uid;
 	
