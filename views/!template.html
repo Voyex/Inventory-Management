@@ -1,8 +1,8 @@
-<h1>My name is {{name}}</h1><br>
-<h3>My Favorite foods are:</h3><br>
-
-{% for food in favoriteFoods %}
-<div>
-    <p>Food: {{food}}</p>
-</div><br>
-{% endfor %}
+<h1>My name is {{name}}</h1>
+<h4>My Favorite foods are:</h4>
+<ul>
+    {# You can have for loops that loop through twig arrays #}
+    {% for food in favoriteFoods %}
+    <li>{{food}}</li>
+    {% endfor %}
+</ul>
