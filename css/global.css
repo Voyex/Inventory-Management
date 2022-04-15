@@ -22,7 +22,7 @@
 
 }
 
-/* Container for small-image */
+/* Container for small side images */
 .side-images {
     width: 40px;
 
@@ -32,7 +32,7 @@
     padding: 10px;
 }
 
-/* Styling for image */
+/* Styling for side image */
 .small-image {
     cursor: pointer;
     margin-bottom: 8px;
@@ -47,14 +47,14 @@
     transform: scale(1.1);
 }
 
-/* Container for active-image */
+/* Container for primary image */
 .main-image {
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
-/* Styling for image */
+/* Styling for primary image */
 .active-image {
     cursor: pointer;
     max-height: 100%;
