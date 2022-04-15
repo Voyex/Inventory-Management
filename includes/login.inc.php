@@ -14,7 +14,7 @@ if(isset($_POST["submit"])) {
 
     loginUser($conn, $email, $pwd);
     }
-    else {
-        header("location: copySettings.php");
-        exit();
-    }
+else {
+    header("location: ../login.php?error=redirecterror");
+    exit();
+}
