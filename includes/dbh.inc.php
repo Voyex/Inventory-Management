@@ -1,4 +1,5 @@
 <?php
+require_once "functions.inc.php";
 //Handles the initial connection to the server
 
 $serverName = "localhost";
@@ -12,5 +13,6 @@ $conn = mysqli_connect($serverName, $dbUsername, $dBPassword, $dBName);
 //Checks that the connection was successful
 if (!$conn) {
     header('Location: ../index.php?error=connecterror');
+    logError("Connection failed");
     die("Connection failed: " . mysqli_connect_error());
 }

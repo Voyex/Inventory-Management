@@ -3,6 +3,12 @@ session_start();
 // Initialize Twig
 require_once "vendor/autoload.php";
 
+// // Connect to the database
+// require_once "includes/dbh.inc.php";
+
+// // Load helper functions
+// require_once "includes/functions.inc.php";
+
 $loader = new \Twig\Loader\FilesystemLoader('views');
 $twig = new \Twig\Environment($loader);
 ?>

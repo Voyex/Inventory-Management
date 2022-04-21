@@ -10,22 +10,12 @@ function customPageHeader()
 <?php }
 include_once('template/header.php');
 
-// // Variables go here
-$name = "John Doe";
-$favoriteFoods = ["Pizza", "Burgers", "Ramen"];
+// Gets all the items into a variable.
+include_once("includes/getItems.inc.php");
 
 // This renders "!template.html" from the views folder.
-echo $twig->render("!template.html", [
-  "name" => $name,
-  "favoriteFoods" => $favoriteFoods
-]);
-
-/* You can render multiple templates so try and break things up
- * into smaller parts so we can have reusable moduels
- */
-echo $twig->render('!template.html', [
-  "name" => $name,
-  "favoriteFoods" => $favoriteFoods
+echo $twig->render("index.html", [
+  "items" => $items
 ]);
 
 

@@ -188,17 +188,16 @@ function loginUser($conn, $email, $pwd) {
         exit();
     }
 }
-function getUID($conn, $username) {
-	   $sql = "SELECT id FROM user WHERE username = ?;";
+function getUID($conn, $email) {
+	$sql = "SELECT id FROM user WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
+
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../login.php?error=stmtfailure5");
+        header("location: ../login.php?error=stmtfailure");
         exit();   
     }
 
-    mysqli_stmt_bind_param($stmt, "s", $username);
-    mysqli_stmt_execute($stmt);
-
+    mysqli_stmt_bind_param($stmt, "s", $email);
     $stmtResult = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($stmtResult);
     
@@ -207,6 +206,22 @@ function getUID($conn, $username) {
 	return $uid;
 	
 }
+
+function getHello() { 
+    echo "Hello";
+}
+
+/**
+ * gets a list of all items
+ * 
+ * @param conn The connection to the sql query
+ * @return rows array of items in the database.
+ */
+function getAllItems($conn) { 
+    $sql = "SELECT * FROM item;";
+    return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Item');
+}
+
 function createUserDir($uid) {
     if(!file_exists("../userdata/users/$uid")) {
         if(!mkdir("../userdata/users/$uid")) {
@@ -220,5 +235,17 @@ function writeToFile($path, $toBeWritten, $uid) {
     $file = fopen($path,"w");
     fwrite($file, $toBeWritten);
     fclose($file);
+}
+
+function logToConsole($message) {
+    echo "<script>";
+    echo "console.log(\"".$message."\");";
+    echo "</script>";
+}
+
+function logError($message) {
+    echo "<script>";
+    echo "console.error(\"".$message."\");";
+    echo "</script>";
 }
 

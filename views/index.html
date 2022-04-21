@@ -1,0 +1,43 @@
+<form action="POST" class="search">
+  <input
+    type="text"
+    id="search-bar"
+    class="search-bar"
+    placeholder="Search..."
+  /><input type="submit" class="search-button" value="Search" />
+</form>
+
+<div class="filter">
+  <label for="dropdown" id="dropdown-label">Filter +</label>
+  <input
+    type="checkbox"
+    name="dropdown"
+    class="dropdown"
+    id="dropdown"
+    autocomplete="off"
+    onclick="toggleFilterDropdown(this)"
+  />
+  <ul class="filter-content">
+    <li>Lorem ipsum</li>
+  </ul>
+</div>
+<div class="content">
+  {% for item in items %}
+  <div class="item">
+    <a class="main-image" href="item.php">
+      <img src="#" alt="Shirt Picture" class="active-image" />
+    </a>
+    <div class="item-content">
+      <div class="top">
+        <a href="item.php?id={{item.itemID}}" class="item-name">{{item.title}}</a>
+      </div>
+      <p class="description">{{item.description}}</p>
+      <h3>Price: ${{item.retail_price}}</h3>
+      <!-- <button class="button-shirt">Buy Now!</button> -->
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<script src="scripts/script.js"></script>
+
