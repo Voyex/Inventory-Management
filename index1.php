@@ -13,9 +13,28 @@ include_once('template/header.php');
 // Gets all the items into a variable.
 include_once("includes/getItems.inc.php");
 
+$item = new Item;
+
+$search = $_POST['search']; //Gets the search value
+
+// Loads itms that fit the search parameters
+if (isset($search)) {
+  $items = $item->getSearchedItems($search);
+} else {
+  $items = $item->getAllItems();
+}
+
+foreach($items as $item) {
+  $item->description = strip_tags($item->description);
+}
+
+$images = $item->getPrimaryImages();
+
 // This renders "!template.html" from the views folder.
 echo $twig->render("index.html", [
-  "items" => $items
+  "items" => $items,
+  "images" => $images,
+  "search" => $search
 ]);
 
 

@@ -217,10 +217,6 @@ function getHello() {
  * @param conn The connection to the sql query
  * @return rows array of items in the database.
  */
-function getAllItems($conn) { 
-    $sql = "SELECT * FROM item;";
-    return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Item');
-}
 
 function createUserDir($uid) {
     if(!file_exists("../userdata/users/$uid")) {

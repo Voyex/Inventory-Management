@@ -1,8 +1,49 @@
-<?php    
+<?php
     // Connect to DB and get helpers
-    require_once 'pdo.inc.php';
-    require_once 'functions.inc.php';
+    require 'pdo.inc.php';
 
-    class item {}
+    class Book{}
+    class Item extends DBH{
 
-    $items = getAllItems($pdo);
+        public function getAllItems() { 
+            $conn = $this->connect();
+
+            $sql = "SELECT * FROM item ORDER BY title;";
+            return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Item');
+        }
+
+        public function getSearchedItems($search) {
+            $conn = $this->connect();
+
+            $sql = "SELECT * FROM item WHERE title LIKE :keyword ORDER BY title;";
+
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindValue(':keyword', '%'.$search.'%', PDO::PARAM_STR);
+            $stmt->execute();
+    
+            return $stmt->fetchAll(PDO::FETCH_CLASS, "Item");
+        }
+
+        public function getItemByID($id) {
+            $conn = $this->connect();
+
+            $sql = "SELECT * FROM item WHERE itemID = $id;";
+
+            return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Book");
+        }
+
+        public function getPrimaryImages() {
+            $conn = $this->connect();
+
+            $sql = "SELECT * FROM image WHERE isPrimary = 1;";
+            return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item");
+        }
+
+        public function getImageByItemID($id) {
+            $conn = $this->connect();
+
+            $sql = "SELECT * FROM image WHERE item_id = $id;";
+            return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item"); 
+        }
+    }

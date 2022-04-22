@@ -1,9 +1,11 @@
-<form action="POST" class="search">
+<form method="post" class="search">
   <input
+    name="search" 
     type="text"
     id="search-bar"
     class="search-bar"
     placeholder="Search..."
+    value="{{search}}"
   /><input type="submit" class="search-button" value="Search" />
 </form>
 
@@ -24,12 +26,16 @@
 <div class="content">
   {% for item in items %}
   <div class="item">
-    <a class="main-image" href="item.php">
-      <img src="#" alt="Shirt Picture" class="active-image" />
+    <a class="main-image" href="item.php?id={{item.itemID}}">
+      {% for image in images %}
+      {% if image.item_id == item.itemID%}
+      <img src="data/items/images/{{image.path}}" alt="Shirt Picture" class="active-image" />
+      {% endif %}
+      {% endfor %}
     </a>
     <div class="item-content">
       <div class="top">
-        <a href="item.php?id={{item.itemID}}" class="item-name">{{item.title}}</a>
+        <a href="item1.php?id={{item.itemID}}" class="item-name">{{item.title}}</a>
       </div>
       <p class="description">{{item.description}}</p>
       <h3>Price: ${{item.retail_price}}</h3>
