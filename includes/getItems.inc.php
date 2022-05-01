@@ -1,9 +1,7 @@
 <?php
     // Connect to DB and get helpers
     require 'pdo.inc.php';
-
-    class Book{}
-    class Item extends DBH{
+    class Item extends DBH {
 
         public function getAllItems() { 
             $conn = $this->connect();
@@ -40,10 +38,16 @@
             return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item");
         }
 
-        public function getImageByItemID($id) {
+        public function getImageByItemID($itemID) {
             $conn = $this->connect();
 
-            $sql = "SELECT * FROM image WHERE item_id = $id;";
+            $sql = "SELECT * FROM image WHERE item_id = $itemID;";
             return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item"); 
+        }
+        public function getTotalQty($itemID) {
+            $conn = $this->connect();
+
+            $sql = "SELECT SUM(quantity) FROM store_item WHERE item_id = $itemID;";
+            return $conn->query($sql)->fetch();
         }
     }

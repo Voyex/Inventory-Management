@@ -1,0 +1,85 @@
+<div class="container">
+    <div id="info">
+      <h1>Profile</h1>
+      <section>
+        <table>
+          <tr>
+            <th>Firstname:</th>
+            <td>
+                <input type="text" placeholder="John" value="{{user.first_name}}" />
+            </td>
+          </tr>
+          <tr>
+            <th>Lastname:</th>
+            <td>
+                <input type="text" placeholder="Doe" value="{{user.last_name}}" />
+            </td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td>
+                <input type="text" placeholder="example@email.com" value="{{user.email}}" />
+            </td>
+          </tr>
+          <tr>
+            <th>Account Type:</th>
+            <td>
+                <p>{{user.type}}</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <div>
+        <button type="submit" name="updateProfileBtn" class="btn btn-primary pull-right">Update Profile</button><br />
+        <!--<a href="">Update Profle</a>-->
+      </div>
+    </div>
+
+    <div class="payments">
+        <table id="payments">
+            <h1>Payments</h1>
+            {% for key,payment in payments %}
+            <h3>Payment Method {{key + 1}}</h3>
+
+            <div class="payment-section">
+                <h4>Primary Account Number (last 4)</h4>
+                <p>{{payment.pan}}</p>
+            </div>
+
+            <div class="payment-section">
+                <h4>Billing Address</h4>
+                <p>{{payment.address.street1}}</p>
+                <p>{{payment.address.street2}}</p>
+                <p>{{payment.address.city}}, {{payment.address.state}} {{payment.address.zipCode}} {{payment.address.country}}</p>
+                <p>{{payment.address.phone}}</p>
+            </div>
+
+            <div class="payment-section">
+                <h4>Name on Account</h4>
+                <p>{{payment.name}}</p>
+            </div>
+            {% endfor %}
+        </table> 
+    </div>
+  
+    <div class="passwordField">
+      <h1>Password Management</h1>
+      <form method="post" action="includes/changePass.php" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="currentpassword">Current Password</label>
+          <input type="password" name="currPass" class="form-control" id="currentpassword" placeholder="Current Password">
+        </div>
+        <div class="form-group">
+          <label for="newpassword">New Password</label>
+          <input type="password" name="pass" class="form-control" id="newpassword" placeholder="New Password">
+        </div>
+        <div class="form-group">
+          <label for="confirmpassword">Password</label>
+          <input type="password" name="rePass" class="form-control" id="confirmpassword" placeholder="Confirm new Password">
+        </div>
+        <input type="hidden" name="hidden_id" value="">
+        <input type="hidden" name="hidden_id" value="">
+        <button type="submit" name="changePasswordBtn" class="btn btn-primary pull-right">Change Password</button> <br />
+      </form>
+    </div>
+</div>

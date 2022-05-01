@@ -11,19 +11,14 @@
     </div>
   
     <div class="item-info">
-      <div class="title">{{item[0].title}}</div> 
+      <div class="title">{{item.title}}</div> 
       <div class="stock-counter" id="stock-counter">
-        <div class="stock-number" id="stock-number">12</div>
+        <div class="stock-number" id="stock-number">{{quantity}}</div>
         <div>Currently in stock</div>
       </div>
   
-      <div class="restock-counter">
-        <div class="restock-number">14</div>
-        <div>Day(s) until next restock</div>
-      </div>
-  
       <div class="price-container">
-        <div>Price: </div><div class="symbol">$</div><div class="price">{{item[0].retail_price}}</div>
+        <div>Price: </div><div class="symbol">$</div><div class="price">{{item.retail_price}}</div>
       </div>
   
       <div class="options">
@@ -53,7 +48,7 @@
         <div class="sizes">
           <p>Size: </p>
           <select name="sizes" id="">
-            <option value="0">XS</option>
+            <option value=>XS</option>
             <option value="1">S</option>
             <option value="2">M</option>
             <option value="3">L</option>
@@ -75,7 +70,7 @@
     <div class="markup">
       <!-- Make sure to sanitize any input -->
       <h1 style="text-align: center">Description</h1>
-      {{item[0].description|raw}}
+      {{item.description|raw}}
     </div>
   </div>
   

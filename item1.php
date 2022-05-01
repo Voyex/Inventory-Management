@@ -24,10 +24,13 @@ $item = $obj->getItemByID($_GET['id']);
 
 $images = $obj->getImageByItemID($_GET['id']);
 
+$quantity = $obj->getTotalQty($_GET['id']);
+
 // This renders "!template.html" from the views folder.
 echo $twig->render("item.html", [
-  "item" => $item,
-  "images" => $images
+  "item" => $item[0],
+  "images" => $images,
+  "quantity" => $quantity[0],
 ]);
 
 

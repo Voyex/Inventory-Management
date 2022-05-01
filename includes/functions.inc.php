@@ -136,7 +136,6 @@ function emailUsed($conn, $email) {
     mysqli_stmt_close($stmt);
 }
 
-
 function createUser($conn, $email, $pwd) {
     $sql = "INSERT INTO user (password, email) VALUES (?, ?);";
     $stmt = mysqli_stmt_init($conn);
@@ -154,6 +153,7 @@ function createUser($conn, $email, $pwd) {
     header("location: ../login.php?error=none");
     exit();
 }
+
 function emptyLoginInput($email, $pwd) {
     $result = false;
 
@@ -205,32 +205,6 @@ function getUID($conn, $email) {
     mysqli_stmt_close($stmt);
 	return $uid;
 	
-}
-
-function getHello() { 
-    echo "Hello";
-}
-
-/**
- * gets a list of all items
- * 
- * @param conn The connection to the sql query
- * @return rows array of items in the database.
- */
-
-function createUserDir($uid) {
-    if(!file_exists("../userdata/users/$uid")) {
-        if(!mkdir("../userdata/users/$uid")) {
-            die("Failed to create user directory.");
-        }
-    }
-}
-
-
-function writeToFile($path, $toBeWritten, $uid) {
-    $file = fopen($path,"w");
-    fwrite($file, $toBeWritten);
-    fclose($file);
 }
 
 function logToConsole($message) {

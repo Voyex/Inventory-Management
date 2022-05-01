@@ -12,3 +12,12 @@ body {
   line-height: 3em;
   font-size: 16px;
 }
+
+.payment-section {
+  margin-bottom: 2em;
+}
+
+h4, p {
+  margin: 0;
+  padding: 0;
+}
