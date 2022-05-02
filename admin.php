@@ -16,12 +16,22 @@ include_once('includes/getStore.inc.php');
 $itemObj = new Item;
 $storeObj = new Store;
 
+<<<<<<< HEAD
+    </table>
+    <div class="ordering-btn">
+      <button class="order-btn" onclick="window.location.href='createOrder.php'">Order More</button>
+    </div>
+
+  </form>
+</div>
+=======
 // Makes sure that a store is selected otherwise the first store is selected.
 if(isset($_GET['storeID'])) {
     $selectedStoreID = $_GET['storeID'];
 } else {
     $selectedStoreID = $storeObj->getFirstStoreID();
 }
+>>>>>>> 1c211d5be105878f546f0d2b7624575e9eb3501e
 
 $storeItems = $itemObj->getAllStoreItems($selectedStoreID);
 $stores = $storeObj->getAllStores();
