@@ -28,7 +28,7 @@
   <div class="item">
     <a class="main-image" href="item.php?id={{item.itemID}}">
       {% for image in images %}
-      {% if image.item_id == item.itemID%}
+      {% if image.item_id == item.itemID %}
       <img src="data/items/images/{{image.path}}" alt="Shirt Picture" class="active-image" />
       {% endif %}
       {% endfor %}

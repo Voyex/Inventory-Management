@@ -4,8 +4,8 @@ $PageTitle = "Inv Manager - Add Item";
 
 function customPageHeader()
 { ?>
-    <!-- Place additional HTML for the head tag here -->
-    <link rel="stylesheet" href="css/index.css" />
+  <!-- Place additional HTML for the head tag here -->
+  <link rel="stylesheet" href="css/index.css" />
 
 <?php }
 include_once('template/header.php');

@@ -1,17 +1,17 @@
 <?php
 require_once "dbh.inc.php";
 
-echo 'Here';
-
 function isCorrectPassword($conn, $pwd, $userID) {
-    $sql = "SELECT * FROM user WHERE id = $userID";
-
-    $result = mysqli_query($conn, $sql);
-
-    $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-    if ($result["password"] == $hashpwd) return true;
-    else return false;
+    echo $userID;
+    $sql = "SELECT password FROM user WHERE id = $userID;";
+    echo $sql;
+    echo "Here 2.0";
+    if ($result = mysqli_query($conn, $sql)) {
+        if ($row = mysqli_fetch_assoc($result)) {
+            echo $row['password'];
+        }
+    }
+    return password_verify($pwd, $row['password']);
 }
 
 function changePassword($conn, $pwd, $userID) {
@@ -42,15 +42,18 @@ if (isset($_POST["submit"])) {
     $pwdRepeat = $_POST["rePass"];
     $userID = $_SESSION["userID"];
 
+    echo "Here";
+
     if (pwdDoesntMatch($pwd, $pwdRepeat)) {
         header("Location: ../profile.php?error=nopwdmatch");
         exit();
     }
-    if (!isCorrectPassword($conn, $pwd, $userID)) {
+    echo "Here2";
+    if (!isCorrectPassword($conn, $currentPwd, $userID)) {
         header("Location: ../profile.php?error=incorrectpwd");
         exit();
     }
-
+    echo "Here3";
     // Attempts to change the password
     if (changePassword($conn, $pwd, $userID)) {
         header("Location: ../profile.php?error=none");
@@ -59,4 +62,4 @@ if (isset($_POST["submit"])) {
         header("Location: ../profile.php?error=pwdcantchange");
     }
 
-}
+} else header("Location: ../profile.php?error=redirecterror");

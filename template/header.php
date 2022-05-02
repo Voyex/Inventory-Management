@@ -38,11 +38,18 @@ $twig = new \Twig\Environment($loader);
                 Inv Manager
             </a>
             <ul>
-                <li><a href="profile.php" class="nav-link">Profile</a></li>
-                <li><a href="admin.php" class="nav-link">Admin</a></li>
-                <li><a href="cart.php" class="nav-link">Cart</a></li>
-                <li><a href="login.php" class="nav-link">Login</a></li>
-                <li><a href="includes/signout.inc.php">Signout</a></li>
+                <?php
+                if (isset($_SESSION["userID"])) {
+                    echo "<li><a href='profile.php' class='nav-link'>Profile</a></li>";
+                    if ($_SESSION["userType"] == "admin") {
+                        echo "<li><a href='admin.php' class='nav-link'>Admin</a></li>";
+                    }
+                    echo "<li><a href='cart.php' class='nav-link'>Cart</a></li>";
+                    echo "<li><a href='includes/signout.inc.php'>Signout</a></li>";
+                } else {
+                    echo "<li><a href='login.php' class='nav-link'>Login</a></li>";
+                }
+                ?>
             </ul>
         </nav>
     </header>
