@@ -71,6 +71,10 @@ include_once('template/header.php');
       </tr>
 
     </table>
+    <div class="ordering-btn">
+      <button class="order-btn" onclick="window.location.href='createOrder.php'">Order More</button>
+    </div>
+
   </form>
 </div>
 

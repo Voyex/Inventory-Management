@@ -42,7 +42,6 @@ $twig = new \Twig\Environment($loader);
                 <li><a href="admin.php" class="nav-link">Admin</a></li>
                 <li><a href="cart.php" class="nav-link">Cart</a></li>
                 <li><a href="login.php" class="nav-link">Login</a></li>
-                <li><a href="createOrder.php" class="nav-link">Order</a></li>
                 <li><a href="includes/signout.inc.php">Signout</a></li>
             </ul>
         </nav>
