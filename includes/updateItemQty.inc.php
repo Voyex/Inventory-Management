@@ -12,14 +12,19 @@ function updateQuantity($storeID, $itemID) {
     $conn = $dbh->connect(); // database connection
 
     // Uses a prepared statement to delete the item
+    try {
     $sql = "UPDATE store_item SET quantity = :quantity WHERE item_id = :itemID AND store_id = :storeID";
     $stmt = $conn->prepare($sql);
     echo "here 0.1";
     $stmt->bindValue(':quantity', $_POST['quantity'], PDO::PARAM_STR);
     $stmt->bindValue(':itemID', $itemID, PDO::PARAM_STR);
-    $stmt->bindValue(':StoreID', $storeID, PDO::PARAM_STR);
+    $stmt->bindValue(':storeID', $storeID, PDO::PARAM_STR);
     echo "here 0.2";
-    return $stmt->execute();
+    $stmt->execute();
+    } catch (Exception $e) {
+        logError($e->getMessage());
+        die($e->getMessage());
+    }
 }
 
 // If an itemID is specified, remove it from the database.

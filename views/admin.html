@@ -25,7 +25,7 @@
           <th>Delete</th>
         </tr>
         {% for item in items %}
-        <form action="includes/updateItemQty.inc.php?itemID={{item.itemID}}&storeID={{selectedStoreID}}" method="post">
+        <form action="includes/updateItemQty.inc.php?itemID={{item.itemID}}&storeID={{selectedStoreID}}" method="post" autocomplete="off">
             <tr>
                 <td class="sku">{{item.itemID}}</td>
                 <td class="title">{{item.title}}</td>
