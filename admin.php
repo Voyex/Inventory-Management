@@ -1,6 +1,6 @@
 <?php
 #Variable that is used to set the title of the page.
-$PageTitle = "Inv Manager - Admin Tools";
+$PageTitle = "Inv Manager - Template";
 
 function customPageHeader()
 { ?>
@@ -9,67 +9,14 @@ function customPageHeader()
 
 <?php }
 include_once('template/header.php');
-?>
+require_once('includes/verifyAdmin.inc.php');
+require_once('includes/getItems.inc.php');
+include_once('includes/getStore.inc.php');
 
-<div class="table-container">
-  <form action="">
-    <table class="item-table">
-      <tr>
-        <th>SKU</th>
-        <th>Name</th>
-        <th>MSRP ($)</th>
-        <th>Purchase Price ($)</th>
-        <th>In Stock Qty.</th>
-        <th>Incoming Qty.</th>
-        <th>Outgoing Qty.</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-      <tr>
-        <td class="sku">ABC123</td>
-        <td class="title">T-Shirt</td>
-        <td class="msrp">25.00</td>
-        <td class="purchase-price">18.00</td>
-        <td class="in-stock" contenteditable="true">7</td>
-        <td class="incoming">41</td>
-        <td class="outgoing" contenteditable="true">2</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
-      </tr>
-      <tr>
-        <td>A3B2C1</td>
-        <td>Jeans</td>
-        <td>35.00</td>
-        <td>28.00</td>
-        <td>3</td>
-        <td>19</td>
-        <td>0</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
-      </tr>
-      <tr>
-        <td>A1B1C1</td>
-        <td>Sweatshirts</td>
-        <td>40.00</td>
-        <td>30.00</td>
-        <td>13</td>
-        <td>32</td>
-        <td>1</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
-      </tr>
-      <tr>
-        <td>A2B2C2</td>
-        <td>Socks</td>
-        <td>12.00</td>
-        <td>8.00</td>
-        <td>34</td>
-        <td>21</td>
-        <td>0</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
-      </tr>
+$itemObj = new Item;
+$storeObj = new Store;
 
+<<<<<<< HEAD
     </table>
     <div class="ordering-btn">
       <button class="order-btn" onclick="window.location.href='createOrder.php'">Order More</button>
@@ -77,12 +24,32 @@ include_once('template/header.php');
 
   </form>
 </div>
+=======
+// Makes sure that a store is selected otherwise the first store is selected.
+if(isset($_GET['storeID'])) {
+    $selectedStoreID = $_GET['storeID'];
+} else {
+    $selectedStoreID = $storeObj->getFirstStoreID();
+}
+>>>>>>> 1c211d5be105878f546f0d2b7624575e9eb3501e
 
-<!-- HTML goes here 
-Note: Don't add body or head tags as they are in the header 
-and are closed in the footer. Pretend they already exist.-->
+$storeItems = $itemObj->getAllStoreItems($selectedStoreID);
+$stores = $storeObj->getAllStores();
 
-<script src="scripts/script.js"></script>
+$items = array();
+// Gets the items that correlate with the store items.
+foreach($storeItems as $storeIndex => $storeItem) {
+    $items[] = $itemObj->getItemByID($storeItem->item_id);
+    end($items)->quantity = $storeItem->quantity; //Adds the quantity to the item
+}
 
-<?php include_once('template/footer.php');
+
+// This renders "!template.html" from the views folder.
+echo $twig->render("admin.html", [
+    "items" => $items,
+    "stores" => $stores,
+    "selectedStoreID" => $selectedStoreID,
+]);
+
+include_once('template/footer.php');
 // Dont place any code here

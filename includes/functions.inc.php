@@ -184,6 +184,7 @@ function loginUser($conn, $email, $pwd) {
         session_start();
         $_SESSION["userID"] = $loginExists["id"];
         $_SESSION["email"] = $loginExists["email"];
+        $_SESSION["userType"] = $loginExists["type"];
         header("location: ../index.php?error=none");
         exit();
     }
