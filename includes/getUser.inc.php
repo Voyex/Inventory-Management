@@ -24,4 +24,11 @@
             $sql = "SELECT * FROM address WHERE id = $addressID";
             return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, 'User');
         }
+
+        public function getAddressesByUserID($userID) {
+            $conn = $this->connect();
+            
+            $sql = "SELECT * FROM address WHERE user_id = $userID;";
+            return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, 'User');
+        }
     }

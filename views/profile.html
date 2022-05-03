@@ -92,8 +92,8 @@
     </form>
   </div>
 
-  <div class="payments">
-    <div id="payments">
+  <div class="payment-container">
+    <div class="payment">
       <h1>Payments</h1>
       {% for key,payment in payments %}
       <h3>Payment Method {{key + 1}}</h3>
@@ -123,28 +123,56 @@
         <input type="submit" name="submit" value="Remove Payment" />
       </form>
       {% endfor %}
-      <form action="includes/addPayment.inc.php?" method="post">
-        <h2>Add New Payment Method</h2>
-        <input type="text" name="pan" placeholder="Account Number" />
-        <input type="text" name="name" placeholder="Name on Account" />
-        <input type="text" name="street1" placeholder="Address 1" />
+      <h2>Add New Payment Method</h2>
+      <form action="includes/addPayment.inc.php" method="post">
+        <input type="text" name="pan" placeholder="Account Number" required />
+        <input type="text" name="code" placeholder="Security Code" required />
+        <input type="text" name="name" placeholder="Name on Account" required />
+        <input type="text" name="street1" placeholder="Address 1" required />
         <input type="text" name="street2" placeholder="Address 2" />
-        <input type="text" name="city" placeholder="City" />
-        <input type="text" name="state" placeholder="State" />
-        <input type="text" name="zip" placeholder="Zip Code" />
-        <input type="text" name="country" placeholder="Country" />
-        <input type="text" name="phone" placeholder="Phone Number" />
-        <button type="submit" name="submit">Submit</button>
+        <input type="text" name="city" placeholder="City" required />
+        <input type="text" name="state" placeholder="State" required />
+        <input type="text" name="zip" placeholder="Zip Code" required />
+        <input type="text" name="country" placeholder="Country" required />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   </div>
 
-  <div class="Addresses">
-    <h1>Addresses</h1>
-    <form action="includes/addAddress.inc.php" method="post">
-      <input type="text" name="street1" placeholder="Address 1" />
-      <input type="text" name="street2" placeholder="Address 2" />
+  <div class="address-container">
 
+    <h1>Addresses</h1>
+    {% for key, address in addresses %}
+    <div class="address">
+      <h4>Address: {{address.nickname}}</h4>
+        <p>{{address.name}}</p>
+        <p>{{address.street1}}</p>
+        <p>{{address.street2}}</p>
+        <p>
+          {{address.city}}, {{address.state}}
+          {{address.zipCode}} {{address.country}}
+        </p>
+        <p>{{address.phone}}</p>
+
+      <form action="includes/removeAddress.inc.php?id={{address.id}}" method="post">
+        <input type="submit" name="submit" value="Remove Address" />
+      </form>
+    </div>
+    {% endfor %}
+
+    <h3>Add an Address</h3>
+    <form action="includes/addAddress.inc.php" method="post">
+      <input type="text" name="nickname" placeholder="Nickname" required />
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="text" name="street1" placeholder="Address 1" required />
+      <input type="text" name="street2" placeholder="Address 2" />
+      <input type="text" name="city" placeholder="City" required />
+      <input type="text" name="state" placeholder="State" required />
+      <input type="text" name="zip" placeholder="Zip Code" required />
+      <input type="text" name="country" placeholder="Country" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <input type="submit" value="Submit">
     </form>
   </div>
 </div>
