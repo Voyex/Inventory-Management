@@ -12,11 +12,15 @@ function deleteAddress($addressID) {
     $conn = $dbh->connect(); // database connection
 
     // Uses a prepared statement to delete the item
+    try {
     $sql = "DELETE FROM address WHERE id = :addressID";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(':addressID', $addressID, PDO::PARAM_STR);
     
     return $stmt->execute();
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
 }
 
 // If an itemID is specified, remove it from the database.

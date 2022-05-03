@@ -1,48 +1,20 @@
 <div class="container">
   <div id="info">
     <h1>Profile</h1>
-    <section>
-      <table>
-        <tr>
-          <th>Firstname:</th>
-          <td>
-            <input type="text" placeholder="John" value="{{user.first_name}}" />
-          </td>
-        </tr>
-        <tr>
-          <th>Lastname:</th>
-          <td>
-            <input type="text" placeholder="Doe" value="{{user.last_name}}" />
-          </td>
-        </tr>
-        <tr>
-          <th>Email:</th>
-          <td>
-            <input
-              type="text"
-              placeholder="example@email.com"
-              value="{{user.email}}"
-            />
-          </td>
-        </tr>
-        <tr>
-          <th>Account Type:</th>
-          <td>
-            <p>{{user.type}}</p>
-          </td>
-        </tr>
-      </table>
-    </section>
-    <div>
-      <button
-        type="submit"
-        name="updateProfileBtn"
-        class="btn btn-primary pull-right"
-      >
-        Update Profile</button
-      ><br />
-      <!--<a href="">Update Profle</a>-->
-    </div>
+    <form action="includes/updateProfile.inc.php" method="post">
+      <label for="firstname">First Name: </label>
+      <input type="text" name="firstname" placeholder="John" value="{{user.first_name}}" required/>
+
+      <label for="lastname">Last Name: </label>
+      <input type="text" name="lastname" placeholder="Doe" value="{{user.last_name}}" required/>
+
+      <label for="email">Email Address: </label>
+      <input type="email" name="email" placeholder="example@email.com" value="{{user.email}}" required />
+
+      <p>Account Type: {{user.type}}</p>
+
+      <input type="submit" value="Update Profile" />
+    </form>
   </div>
 
   <div class="passwordField">
@@ -145,7 +117,7 @@
     <h1>Addresses</h1>
     {% for key, address in addresses %}
     <div class="address">
-      <h4>Address: {{address.nickname}}</h4>
+      <h4>Address: {% if address.nickname is empty %} {{key + 1}} {% else %} {{address.nickname}} {% endif %}</h4>
         <p>{{address.name}}</p>
         <p>{{address.street1}}</p>
         <p>{{address.street2}}</p>
