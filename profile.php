@@ -13,13 +13,11 @@ include_once('template/header.php');
 include_once('includes/getUser.inc.php');
 
 $obj = new User();
-$userID = $_SESSION['UserID'];
+$userID = $_SESSION['userID'];
 
 $user = $obj->getUserByID($userID)[0];
-
 $payments = $obj->getUserPaymentMethods($userID);
 $addresses = $obj->getAddressesByUserID($userID);
-
 foreach($payments as $paymentIndex => $payment) {
     $billing_id = $payment->billing_address_id;
 
@@ -27,8 +25,6 @@ foreach($payments as $paymentIndex => $payment) {
     
     $payment->{'address'} = $address;
 }
-
-echo $payments[0]->address->phone;
 
 // This renders "!template.html" from the views folder.
 echo $twig->render("profile.html", [

@@ -14,7 +14,8 @@ function addPayment($userID) {
 
     // Uses a prepared statement to delete the item
     try {
-    $sql = "INSERT INTO address (user_id, name, street1, street2, city, state, zipCode, country, phone) VALUES(:userID, :name, :street1, :street2, :city, :state, :zip, :country, :phone)";
+    $sql = "INSERT INTO address (user_id, name, street1, street2, city, state, zipCode, country, phone) 
+    VALUES(:userID, :name, :street1, :street2, :city, :state, :zip, :country, :phone)";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(':userID', $userID, PDO::PARAM_STR);
     $stmt->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
@@ -26,22 +27,27 @@ function addPayment($userID) {
     $stmt->bindValue(':country', $_POST['country'], PDO::PARAM_STR);
     $stmt->bindValue(':phone', $_POST['phone'], PDO::PARAM_STR);
     
-    return $stmt->execute();
+    $stmt->execute();
+    $addressID = $conn->query("SELECT LAST_INSERT_ID();")->fetch();
     } catch (Exception $e) {
         die ($e->getMessage());
     }
 
     try {
-        $sql = "INSERT INTO payment(user_id, billing_address_id, pan, code, name) VALUES(:userID, :billingID, :pan, :code, :name)";
+        $sql = "INSERT INTO payment(user_id, billing_address_id, pan, code, name) 
+        VALUES(:userID, :billingID, :pan, :code, :name);";
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':userID', $_POST['userID'], PDO::PARAM_STR);
-        $stmt->bindValue(':billingID', , PDO::PARAM_STR);
+        $stmt->bindValue(':userID', $userID, PDO::PARAM_STR);
+        $stmt->bindValue(':billingID', $addressID[0], PDO::PARAM_STR);
         $stmt->bindValue(':pan', $_POST['pan'], PDO::PARAM_STR);
         $stmt->bindValue(':code', $_POST['code'], PDO::PARAM_STR);
-        $stmt->bindValue(':name', $_POST['name '], PDO::PARAM_STR);
+        $stmt->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
+
+        $stmt->execute();
     } catch (Exception $e) {
         die ($e->getMessage());
     }
+    return true;
 }
 
 // If a userID exists, add an address for that user
