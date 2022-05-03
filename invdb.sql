@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 02, 2022 at 10:01 PM
+-- Generation Time: May 02, 2022 at 11:03 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -85,7 +85,7 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`itemID`, `title`, `description`, `retail_price`, `wholesale_price`, `quantity`) VALUES
-(1, 'T-shirt', '<h1> This is a t-shirt homie </h1>', 12.55, 8.3, 36);
+(1, 'T-shirt', '<h1> This is a t-shirt </h1>', 12.55, 8.3, 36);
 
 -- --------------------------------------------------------
 
@@ -104,6 +104,29 @@ CREATE TABLE `item_category` (
 
 INSERT INTO `item_category` (`item_id`, `category_id`) VALUES
 (1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item_image`
+--
+
+CREATE TABLE `item_image` (
+  `id` int(11) NOT NULL COMMENT 'The ID of the image',
+  `item_id` int(11) NOT NULL COMMENT 'The ID of the item that the image belongs to the item',
+  `path` text NOT NULL COMMENT 'The File''s name',
+  `meta` text NOT NULL COMMENT 'The Metadata description of the image',
+  `isPrimary` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'A boolean that is true if it is the main image'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `item_image`
+--
+
+INSERT INTO `item_image` (`id`, `item_id`, `path`, `meta`, `isPrimary`) VALUES
+(1, 1, '1.jpeg', 'A Black T-shirt', 1),
+(2, 1, '1(1).jpeg', 'A White T-shirt', 0),
+(3, 1, '1(2).jpg', 'A White T-shirt', 0);
 
 -- --------------------------------------------------------
 
@@ -265,6 +288,13 @@ ALTER TABLE `item_category`
   ADD KEY `category_id` (`category_id`);
 
 --
+-- Indexes for table `item_image`
+--
+ALTER TABLE `item_image`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `item_id` (`item_id`);
+
+--
 -- Indexes for table `order_items`
 --
 ALTER TABLE `order_items`
@@ -344,6 +374,12 @@ ALTER TABLE `item`
   MODIFY `itemID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'An item''s ID', AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `item_image`
+--
+ALTER TABLE `item_image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The ID of the image', AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
@@ -395,6 +431,12 @@ ALTER TABLE `address`
 ALTER TABLE `item_category`
   ADD CONSTRAINT `item_category_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`itemID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `item_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `item_image`
+--
+ALTER TABLE `item_image`
+  ADD CONSTRAINT `item_image_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`itemID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `order_items`

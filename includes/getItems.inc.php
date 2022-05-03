@@ -46,14 +46,14 @@
         public function getPrimaryImages() {
             $conn = $this->connect();
 
-            $sql = "SELECT * FROM image WHERE isPrimary = 1;";
+            $sql = "SELECT * FROM item_image WHERE isPrimary = 1;";
             return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item");
         }
 
         public function getImageByItemID($itemID) {
             $conn = $this->connect();
 
-            $sql = "SELECT * FROM image WHERE item_id = $itemID;";
+            $sql = "SELECT * FROM item_image WHERE item_id = $itemID;";
             return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item"); 
         }
 
