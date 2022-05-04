@@ -11,7 +11,7 @@ function customPageHeader()
 include_once('template/header.php');
 
 // This renders "!template.html" from the views folder.
-echo $twig->render("createOrder.html", []);
+echo $twig->render("create-order.html", []);
 
 include_once('template/footer.php');
 // Dont place any code here

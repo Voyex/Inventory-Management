@@ -9,11 +9,10 @@
   /><input type="submit" class="search-button" value="Search" />
 </form>
 
-<div class="filter">
+{# <form class="filter" method="post">
   <label for="dropdown" id="dropdown-label">Filter +</label>
   <input
     type="checkbox"
-    name="dropdown"
     class="filter-dropdown"
     id="dropdown"
     autocomplete="off"
@@ -22,7 +21,7 @@
   <ul class="filter-content">
     <li>Lorem ipsum</li>
   </ul>
-</div>
+</form> #}
 <div class="content">
   {% for item in items %}
   <div class="item">
