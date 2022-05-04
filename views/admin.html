@@ -1,5 +1,6 @@
-<form action="admin.php" method="post" autocomplete="off">
-    <select name="storeID" onchange="this.form.submit();">
+<form action="admin.php" method="post" autocomplete="off" class="margin-20" >
+    <label for="storeID" class="font-1-2">Select Store: </label>
+    <select name="storeID" class="select" onchange="this.form.submit();">
         <option value="">Select a Store:</option>
         {% for store in stores %}
         {% if store.id == selectedStoreID %}
@@ -10,7 +11,7 @@
         {% endfor %}
     </select>
 </form>
-<div class="table-container">
+<div class="table-container black-text">
       <table class="item-table">
         <tr>
           <th>SKU</th>
@@ -42,4 +43,4 @@
         {% endfor %}
       </table>
   </div>
-  <a href="add-item.php?storeID={{selectedStoreID}}">Add Item</a>
+  <a href="add-item.php?storeID={{selectedStoreID}}" class="submit margin-20 font-1-2">Add Item</a>

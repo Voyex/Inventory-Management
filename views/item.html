@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content black-text">
     <div class="images">
       <div class="side-images">
         {% for image in images %}
@@ -28,36 +28,22 @@
       <div class="options">
         <div class="colors">
           <p>Color:</p>
-          <label for="white">
+          {% for key, color in colors %}
+          <label for="{{key}}">
             <div class="color-containter">
-              <div class="color" style="background-color: white"></div>
+              <div class="color" style="background-color: {{color.value}};"></div>
             </div>
           </label>
-          <input type="checkbox" name="white" id="white">
-  
-          <label for="red">
-            <div class="color-containter">
-              <div class="color" style="background-color: red"></div>
-            </div>
-          </label>
-          <input type="checkbox" name="red" id="red" onclick="selectBox(this.id);">
-  
-          <label for="black">
-            <div class="color-containter">
-              <div class="color" style="background-color: black"></div>
-            </div>
-          </label>
-          <input type="checkbox" name="black" id="black">
+          <input type="checkbox" name="{{key}}">
+          {% endfor %}
         </div>
+
         <div class="sizes">
           <p>Size: </p>
           <select name="sizes" id="">
-            <option value=>XS</option>
-            <option value="1">S</option>
-            <option value="2">M</option>
-            <option value="3">L</option>
-            <option value="4">XL</option>
-            <option value="5">XXL</option>
+            {% for size in sizes %}
+            <option value="{{size.value}}">{{size.value}}</option>
+            {% endfor %}
           </select>
         </div>
       </div>
