@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+table, th,td {
+    border: 1px solid black;
+}
+.cart-btn{
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: teal;
+    color: white;
+}
+.cart-btn:hover {
+    background-color: rgb(69, 69, 233);
+}
