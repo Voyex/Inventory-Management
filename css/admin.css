@@ -1,11 +1,17 @@
+#admin-link {
+  color: var(--secondary-color);
+}
+
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .table-container {
   background-color: white;
   width: 80%;
+  height: 80vh;
 }
 
 .item-table {

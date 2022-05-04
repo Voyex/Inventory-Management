@@ -1,3 +1,7 @@
+#login-link {
+  color: var(--secondary-color);
+}
+
 * {
   margin: 0;
   padding: 0;

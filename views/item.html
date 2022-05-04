@@ -14,7 +14,11 @@
       <div class="title">{{item.title}}</div> 
       <div class="stock-counter" id="stock-counter">
         <div class="stock-number" id="stock-number">{{quantity}}</div>
+        {% if quantity != 0 %}
         <div>Currently in stock</div>
+        {% else %}
+        <div style="color: red;">Out of stock</div>
+        {% endif %}
       </div>
   
       <div class="price-container">

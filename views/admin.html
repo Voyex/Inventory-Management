@@ -1,11 +1,11 @@
-<form action="admin.php" method="get" autocomplete="off">
-    <select name="store">
-        <option name="storeID" value="">Select a Store:</option>
+<form action="admin.php" method="post" autocomplete="off">
+    <select name="storeID" onchange="this.form.submit();">
+        <option value="">Select a Store:</option>
         {% for store in stores %}
         {% if store.id == selectedStoreID %}
-        <option name="storeID" value="{{store.id}}" selected>{{store.name}}</option>
+        <option value="{{store.id}}" selected>{{store.name}}</option>
         {% else %}
-        <option name="storeID" value="{{store.id}}">{{store.name}}</option>
+        <option value="{{store.id}}">{{store.name}}</option>
         {% endif %}
         {% endfor %}
     </select>
@@ -42,3 +42,4 @@
         {% endfor %}
       </table>
   </div>
+  <a href="add-item.php?storeID={{selectedStoreID}}">Add Item</a>
