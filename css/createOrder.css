@@ -1,0 +1,125 @@
+body {
+  background-color: #ccffe6;
+}
+.container {
+  margin-left: 50px;
+}
+#info {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+.passwordField {
+  line-height: 3em;
+  font-size: 16px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 500;
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 10px 14px;
+}
+
+td {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 300;
+  padding: 0 10px;
+}
+
+.cart-btn {
+  padding: 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(71, 71, 71);
+  color: white;
+}
+
+.cart-btn:hover {
+  background-color: rgb(69, 69, 233);
+}
+
+.item {
+  display: flex;
+}
+
+.items {
+  padding-top: 5%;
+}
+
+.item_text {
+  padding-right: 20px;
+}
+
+.item_input {
+  border-radius: 10px;
+  font-size: 1.3em;
+  border: 2px solid black;
+}
+
+.color {
+  display: flex;
+}
+
+.color_text {
+  padding-right: 20px;
+}
+
+.quantity {
+  display: flex;
+}
+
+.quantity_text {
+  padding-right: 20px;
+}
+
+.tshirt {
+  padding-top: 3%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tshirt_input {
+  border-radius: 10px;
+  font-size: 1.3em;
+  border: 2px solid black;
+}
+
+.tshirt_quantity_input {
+  border-radius: 10px;
+  width: 80px;
+  font-size: 1.3em;
+}
+
+.total {
+  display: flex;
+  padding-top: 40px;
+}
+
+.total_order {
+  padding-right: 40px;
+}
+
+.add {
+  padding: 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(71, 71, 71);
+  color: white;
+}
+
+.add:hover {
+  background-color: rgb(69, 69, 233);
+}
