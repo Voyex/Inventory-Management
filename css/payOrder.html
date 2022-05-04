@@ -9,38 +9,145 @@
   <body>
     <div class="container">
       <div id="info">
-        <h1>Order Payment</h1>
+        <h1>Purchase Order</h1>
         <!--<a href="">Update Profle</a>-->
-        <div class="firstHalf">
-          <div class="cn">
-            <h2 class="item_text">Card Number:</h2>
-            <input
-              type="text"
-              class="item_input"
-              placeholder="XXXX XXXX XXXX XXXX"
-            />
-          </div>
+        <div class="top-left">
+          <h2 class="underline_title">Inventory Management</h2>
 
-          <div class="cvc">
-            <h2 class="cvc_text">CVC:</h2>
-            <input type="text" class="cvc_input" placeholder="XXX" />
+          <div class="left">
+            <h3 class="item_text_left">Name: Eau Claire</h3>
+          </div>
+          <div class="left">
+            <h3 class="item_text_left">Address: 1234 Eau Claire St</h3>
+          </div>
+          <div class="left">
+            <h3 class="item_text_left">Phone Number: 123-555-7890</h3>
+          </div>
+          <div class="left">
+            <h3 class="item_text_left">
+              Email: inventory-management@email.com
+            </h3>
           </div>
         </div>
-        <div class="secondHalf">
-          <div class="date">
-            <h2 class="date_text">Exp. Date:</h2>
-            <input type="text" class="date_input" placeholder="XX/XX" />
-          </div>
+        <div class="wrapper">
+          <div class="left_side">
+            <h2 class="underline_title">Supplier</h2>
 
-          <div class="holder">
-            <h2 class="holder_text">Card Holder:</h2>
-            <input type="text" class="holder_input" placeholder="XXX" />
+            <div class="left">
+              <h3 class="item_text_left">Name: Menards</h3>
+            </div>
+            <div class="left">
+              <h3 class="item_text_left">Address: 1234 Menards St</h3>
+            </div>
+            <div class="left">
+              <h3 class="item_text_left">Phone Number: 123-456-7890</h3>
+            </div>
+            <div class="left">
+              <h3 class="item_text_left">Email: supplier@email.com</h3>
+            </div>
+          </div>
+          <div class="right_side">
+            <h2 class="underline_title">Ship To</h2>
+            <div class="right">
+              <h3 class="item_text_right">Name: Admin</h3>
+            </div>
+            <div class="right">
+              <h3 class="item_text_right">Address: 1234 Admin St</h3>
+            </div>
+            <div class="right">
+              <h3 class="item_text_right">Phone: 123-555-2312</h3>
+            </div>
+            <h3 class="item_text_right">Email: customer@email.com</h3>
           </div>
         </div>
-      </div>
-      <div class="total">
-        <h1 class="total_order">Total = $1285</h1>
-        <button class="cart-btn">Purchase</button>
+        <div class="ship_info">
+          <h2 class="underline_title">Shipping Info</h2>
+          <table>
+            <tr class="tbl">
+              <th class="tbl">Delivery Date</th>
+              <th class="tbl">Order Placed Date</th>
+              <th class="tbl">Address</th>
+              <th class="tbl">Name</th>
+              <th class="tbl">Time</th>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">06/12/2022</td>
+              <td class="tbl">05/02/2022</td>
+              <td class="tbl">1234 Admin St</td>
+              <td class="tbl">Admin</td>
+              <td class="tbl">3:00pm</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="ship_info">
+          <h2 class="underline_title">Order Details</h2>
+          <table>
+            <tr class="tbl">
+              <th class="tbl">Item #</th>
+              <th class="tbl">Description</th>
+              <th class="tbl">Quantity</th>
+              <th class="tbl">Unit Price</th>
+              <th class="tbl">Total</th>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">231415</td>
+              <td class="tbl">Black Shirt</td>
+              <td class="tbl">2</td>
+              <td class="tbl">$20.00</td>
+              <td class="tbl">$40.00</td>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">123467</td>
+              <td class="tbl">Red Pants</td>
+              <td class="tbl">5</td>
+              <td class="tbl">$10.00</td>
+              <td class="tbl">$50.00</td>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">764562</td>
+              <td class="tbl">Blue Shoes</td>
+              <td class="tbl">1</td>
+              <td class="tbl">$45.00</td>
+              <td class="tbl">$45.00</td>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">563394</td>
+              <td class="tbl">White Socks</td>
+              <td class="tbl">4</td>
+              <td class="tbl">$12.00</td>
+              <td class="tbl">$48.00</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="shipping_info">
+          <table class="tbl_output">
+            <tr class="tbl">
+              <td class="tbl">Subtotal</th>
+              <td class="tbl">$183.00</th>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">Tax Rate: 6.5%</td>
+              <td class="tbl">$11.90</td>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">Shipping</td>
+              <td class="tbl">$10.00</td>
+            </tr>
+            <tr class="tbl">
+              <td class="tbl">Total</td>
+              <td class="tbl">$204.90</td>
+            </tr>
+            
+          </table>
+        </div>
+          
+
+        <div class="total">
+          <h1 class="total_order">Total = $204.90</h1>
+          <button class="cart-btn">Print Order</button>
+        </div>
       </div>
     </div>
     <script src="js/scripts.js"></script>
