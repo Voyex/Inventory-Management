@@ -1,9 +1,18 @@
 .container{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    color: black;
+    padding-top: 10px;
 }
-table, th,td {
+table{
+    width: 100%;
+}
+th{
     border: 1px solid black;
+}
+td{
+    border-bottom: 1px solid black;
+    
 }
 .cart-btn{
     padding: 10px;
@@ -13,7 +22,13 @@ table, th,td {
     border: none;
     background-color: teal;
     color: white;
+    width: 100%;
 }
 .cart-btn:hover {
     background-color: rgb(69, 69, 233);
+}
+.box1{
+    background-color: white;
+    width: 100%;
+    padding: 10px;
 }

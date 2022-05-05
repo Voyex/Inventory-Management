@@ -1,17 +1,46 @@
 <div class="content">
     <div class="box1">
       <div class="order">
-            <h5> Order Status: <!--Database status --></h5>
-            <p><br>Shipping Address: <!--Database shipping address-->
-            <br>Date Placed: <!--Database date --> 
-            <br>Expected Arrival: <!--Database date -->
+        
+          <table class="orders">
+            <h5> Order Status: <!--Database status --></h5> 
+              <tr>
+                <td>Shipping Address: <!--Database shipping address--></td>
+              </tr>
+              <tr>
+                <td>Date Placed: <!--Database date --> </td>
+              </tr>
+              <tr>
+                <td>Arrival: <!--Database date --></td> 
+              </tr>
+          </table>
+            
+            <div class="billing">
+                <table>
+                    <tr>
+                        <td>
+                            <p> Billing Address: <!--Database bill address --><br></p>
+                            <p>123 test street</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p> Payment Method: <!--Database payment --><br></p>
+                            <p>debit: *****1234</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div id="button">
                 <button type="button" onclick="">Cancel Order</button>
+            </div>
+            <div id="button">
+                <button type="button" onclick="window.print();">Print Order</button>
             </div>
             </p>
         </div>
         <div class="itemtable">
-            <table>
+            <table class="order-items">
                 <tr>
                     <td>
                         <a class="main-image" href="item.php">
@@ -31,23 +60,18 @@
                         <p>5<!--Show price of item and quantity bougt--></p>
                     </td>
                     <td>
-                        <p> Total Price </p>
-                        <p>5<!-- Total calculated price of item bought--></p>
+                        <p>Shiping cost<!--Shipping cost for items--></p>
+                    </td>
+                    <td>
+                        <p>Tax <!--Tax cost for items--></p>
                     </td>
                 </tr>
             </table>
+            <table>
+                <td>
+                    <p>Total Price <!-- Total calculated price of item bought--></p>
+                </td>
+            </table>
         </div>
-    </div>
-    <div class="box2">
-        <div class="billing">
-            <p> Billing Address: <!--Database bill address --><br></p>
-            <p>123 test street</p>
-            <p> Payment Method: <!--Database payment --><br></p>
-            <p>debit: *****1234</p>
-        </div>
-        <div id="button">
-            <button type="button" onclick="window.print();">Print Order</button>
-        </div>
-    </div>
-    
+    </div>    
 </div>
