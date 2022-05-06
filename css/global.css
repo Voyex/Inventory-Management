@@ -1,12 +1,14 @@
 :root {
-    --hover-color: yellow;
-    --main-color: rgb(50,50,50);
-    --secondary-color: red;
+    --hover-color: #1265c7;
+    --main-color: #181818;
+    --background-color: #2b2b2b;
+    --secondary-color: #1b72d9;
+    --text-color: gainsboro;
     --line-color: lightgray;
 }
 
 ::selection {
-    background: blueviolet;
+    background: var(--secondary-color);
     color: #fff;
 }
 
@@ -89,7 +91,7 @@ header {
     grid-area: header;
 
     padding: 10px;
-    background-color: grey;
+    background-color: var(--main-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
 
@@ -118,28 +120,146 @@ header nav li {
 }
 
 header a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     padding: 3px
 }
 
 header a:hover {
-    color: var(--hover-color);
+    color: var(--secondary-color);
 }
 
 .nav-link {
-    color: white;
     text-decoration: none;
-    padding: 3px
+    padding: 3px;
 }
 
 main {
     grid-area: main;
-    background-color: gainsboro;
+    flex:2;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 footer {
     grid-area: footer;
-    background-color: black;
-    color: white;
+    background-color: var(--main-color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-color);
+    padding: 10px 0;
+    z-index: 1;
+}
+  
+.dropdown-content a:hover {
+    color: var(--secondary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Global styling */
+
+.black-text {
+    color: black;
+}
+
+.secondary-text {
+    color: var(--secondary-color);
+}
+
+.white-text {
+    color: var(--white-text);
+}
+
+.primary-text {
+    color: var(--text-color);
+}
+
+.container {
+    width: 100%;
+}
+
+.hflex {
+    display: flex;
+    flex-direction: row;
+}
+
+.vflex {
+    display: flex;
+    flex-direction: column;
+}
+
+.vcenter {
+    align-items: center;
+}
+
+.left-align {
+    align-items: left;
+}
+
+.textbox {
+    max-width: 250px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.form-item {
+    margin-bottom: 10px;
+}
+
+.submit {
+    color: var(--text-color);
+    padding: 5px 10px 5px 10px;
+    background-color: var(--secondary-color);
+    width: min-content;
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 3px;
+}
+
+.submit:hover {
+    background-color: var(--hover-color);
+}
+
+.delete-btn {
+    color: var(--text-color);
+    padding: 5px 10px 5px 10px;
+    background-color: #cd1515;
+    width: min-content;
+    border: none;
+    border-radius: 3px; 
+}
+
+.delete-btn:hover {
+    background-color: #be1515;
+}
+
+.bmargin-10 {
+    margin-bottom: 10px;
+}
+
+.bmargin-25 {
+    margin-bottom: 25px;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.font-1-2 {
+    font-size: 1.2em;
+}
+
+.select {
+    border: none;
+    background-color: var(--text-color);
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-radius: 5px;
 }

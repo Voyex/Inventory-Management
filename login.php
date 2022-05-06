@@ -11,7 +11,7 @@ function customPageHeader()
 include_once('template/header.php');
 ?>
 
-<div class="wrapper">
+<div class="wrapper black-text">
   <div class="title-text">
     <div class="title login">Login</div>
     <div class="title signup">Signup</div>

@@ -17,8 +17,8 @@ $itemObj = new Item;
 $storeObj = new Store;
 
 // Makes sure that a store is selected otherwise the first store is selected.
-if(isset($_GET['storeID'])) {
-    $selectedStoreID = $_GET['storeID'];
+if(isset($_POST['storeID'])) {
+    $selectedStoreID = $_POST['storeID'];
 } else {
     $selectedStoreID = $storeObj->getFirstStoreID();
 }

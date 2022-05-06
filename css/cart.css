@@ -1,6 +1,7 @@
-body {
-  background-color: #ccffe6;
+#cart-link {
+  color: var(--secondary-color);
 }
+
 .container {
   margin-left: 50px;
 }

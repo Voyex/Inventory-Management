@@ -14,9 +14,14 @@ function customPageHeader()
 include_once "template/header.php";
 // Object that can be used to get items and related data.
 include_once('includes/getItems.inc.php');
+include_once('includes/getOptions.inc.php');
 
 // Variables go here
 $obj = new Item;
+$optionObj = new Option;
+
+$colors = $optionObj->getColorOptionsByItemID($_GET['id']);
+$sizes = $optionObj->getSizeOptionsByItemID($_GET['id']);
 
 $item = $obj->getItemByID($_GET['id']);
 $images = $obj->getImageByItemID($_GET['id']);
@@ -27,6 +32,8 @@ echo $twig->render("item.html", [
   "item" => $item,
   "images" => $images,
   "quantity" => $quantity,
+  "colors" => $colors,
+  "sizes" => $sizes,
 ]);
 
 

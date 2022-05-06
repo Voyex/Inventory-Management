@@ -1,51 +1,60 @@
-<div class="container">
-  <div id="info">
-    <h1>Profile</h1>
-    <form action="includes/updateProfile.inc.php" method="post">
-      <label for="firstname">First Name: </label>
-      <input
-        type="text"
-        name="firstname"
-        placeholder="John"
-        value="{{user.first_name}}"
-        required
-      />
+<div class="container vflex vcenter">
+  <div id="bmargin-25">
+    <h1 class="text-center">Basic Information</h1>
+    <form action="includes/updateProfile.inc.php" method="post" class="vflex vcenter">
+      <div class="form-item">
+        <label for="firstname">First Name: </label>
+        <input
+          type="text" class="textbox"
+          name="firstname"
+          placeholder="John"
+          value="{{user.first_name}}"
+          required
+        />
+      </div>
 
+      <div class="form-item">
       <label for="lastname">Last Name: </label>
       <input
-        type="text"
+        type="text" class="textbox"
         name="lastname"
         placeholder="Doe"
         value="{{user.last_name}}"
         required
       />
+      </div>
 
+      <div class="form-item">
       <label for="email">Email Address: </label>
       <input
-        type="email"
+        type="email" class="textbox"
         name="email"
         placeholder="example@email.com"
         value="{{user.email}}"
         required
       />
+      </div>
 
+      <div class="form-item">
       <p>Account Type: {{user.type}}</p>
+      </div>
 
-      <input type="submit" value="Update Profile" />
+      <input type="submit" class="submit" value="Update Profile" />
     </form>
   </div>
 
-  <div class="passwordField">
-    <h1>Password Management</h1>
+  <div class="bmargin-25">
+    <h1 class="text-center">Password Management</h1>
     <form
       method="post"
       action="includes/changePass.inc.php"
       enctype="multipart/form-data"
+      class="vflex vcenter"
     >
-      <div class="form-group">
-        <label for="currentpassword">Current Password</label>
+        <div class="form-item">
+        <label for="currentpassword">Current Password: </label>
         <input
-          type="password"
+          type="password" class="flexbox"
           name="currPass"
           class="form-control"
           id="currentpassword"
@@ -53,10 +62,10 @@
           required
         />
       </div>
-      <div class="form-group">
-        <label for="newpassword">New Password</label>
+        <div class="form-item">
+        <label for="newpassword">New Password: </label>
         <input
-          type="password"
+          type="password" class="flexbox"
           name="pass"
           class="form-control"
           id="newpassword"
@@ -64,10 +73,10 @@
           required
         />
       </div>
-      <div class="form-group">
-        <label for="confirmpassword">Repeat New Password</label>
+        <div class="form-item">
+        <label for="confirmpassword">Repeat New Password: </label>
         <input
-          type="password"
+          type="password" class="flexbox"
           name="rePass"
           class="form-control"
           id="confirmpassword"
@@ -75,26 +84,31 @@
           required
         />
       </div>
-      <button type="submit" name="submit" class="btn btn-primary pull-right">
-        Change Password
-      </button>
-      <br />
+      <input type="submit" class="submit" name="submit" value="Change Password" />
     </form>
   </div>
 
-  <div class="payment-container">
-    <div class="payment">
-      <h1>Payments</h1>
+  <div class="bmargin-25 vflex vcenter">
+    <div class="payment bmargin-10">
+      <h1 class="text-center">Payments</h1>
       {% for key,payment in payments %}
-      <h3>Payment Method {{key + 1}}</h3>
+      <div class="text-center">
+      <h3 class="text-center">Payment Method: {{key + 1}}</h3>
+      </div>
 
-      <div class="payment-section">
-        <h4>Primary Account Number (last 4)</h4>
+      <div class="vflex left-align bmargin-10">
+        <h4>Name on Account:</h4>
+        <p>{{payment.name}}</p>
+      </div>
+
+      <div class="vflex left-align bmargin-10">
+        <h4>Primary Account Number (last 4):</h4>
         <p>{{payment.pan}}</p>
       </div>
 
-      <div class="payment-section">
-        <h4>Billing Address</h4>
+      <div class="vflex left-align bmargin-10">
+        <h4>Billing Address:</h4>
+        <p>{{payment.name}}</p>
         <p>{{payment.address.street1}}</p>
         <p>{{payment.address.street2}}</p>
         <p>
@@ -104,37 +118,57 @@
         <p>{{payment.address.phone}}</p>
       </div>
 
-      <div class="payment-section">
-        <h4>Name on Account</h4>
-        <p>{{payment.name}}</p>
-      </div>
-
+      <div class="vflex vcenter">
       <form action="includes/removePayment.inc.php" method="post">
-        <input type="submit" name="submit" value="Remove Payment" />
+        <input type="submit" class="delete-btn" name="submit" value="Remove Payment" />
       </form>
+      </div>
+      </div>
       {% endfor %}
       <h2>Add New Payment Method</h2>
-      <form action="includes/addPayment.inc.php" method="post">
-        <input type="text" name="pan" placeholder="Account Number" required />
-        <input type="text" name="code" placeholder="Security Code" required />
-        <input type="text" name="name" placeholder="Name on Account" required />
-        <input type="text" name="street1" placeholder="Address 1" required />
-        <input type="text" name="street2" placeholder="Address 2" />
-        <input type="text" name="city" placeholder="City" required />
-        <input type="text" name="state" placeholder="State" required />
-        <input type="text" name="zip" placeholder="Zip Code" required />
-        <input type="text" name="country" placeholder="Country" required />
-        <input type="text" name="phone" placeholder="Phone Number" required />
-        <input type="submit" value="Submit" />
+      <form action="includes/addPayment.inc.php" method="post" class="vflex">
+        <div class="form-item">
+          <label for="pan">Primary Account Number: </label>
+        <input type="text" class="textbox" name="pan" placeholder="1111222233334444" required />
+        </div>
+
+        <div class="form-item">
+          <label for="code">Security Code: </label>
+        <input type="text" class="textbox" name="code" placeholder="123" required />
+        </div>
+
+        <div class="form-item">
+          <label for="name">Name on Account</label>
+        <input type="text" class="textbox" name="name" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-item">
+          <h4>Billing Address:</h4>
+        </div>
+
+        <div class="form-item width-850 hflex">
+          <input type="text" class="textbox dyn-width" name="street1" placeholder="Address 1" required />
+          <input type="text" class="textbox dyn-width" name="street2" placeholder="Address 2" />
+          </div>
+    
+          <div class="form-item width-850 hflex">
+          <input type="text" class="textbox dyn-width" name="city" placeholder="City" required />
+          <input type="text" class="textbox dyn-width" name="state" placeholder="State" required />
+          <input type="text" class="textbox dyn-width" name="zip" placeholder="Zip Code" required />
+          <input type="text" class="textbox dyn-width" name="country" placeholder="Country" required />
+          </div>
+    
+          <div class="form-item width-850 hflex">
+          <input type="text" class="textbox dyn-width" name="phone" placeholder="Phone Number" required />
+          </div>
       </form>
-    </div>
   </div>
 
-  <div class="address-container">
-    <h1>Addresses</h1>
+  <div class="bmarghin-25 vflex vcenter">
+    <h1 class="text-center">Addresses</h1>
     {% for key, address in addresses %}
-    <div class="address">
-      <h4>
+    <div class="address bmargin-10">
+      <h4 class="text-center">
         Address: {% if address.nickname is empty %} {{key + 1}} {% else %}
         {{address.nickname}} {% endif %}
       </h4>
@@ -151,23 +185,41 @@
         action="includes/removeAddress.inc.php?id={{address.id}}"
         method="post"
       >
-        <input type="submit" name="submit" value="Remove Address" />
+      <div class="form-item vflex vcenter"></div>
+        <input type="submit" class="delete-btn" name="submit" value="Remove Address" />
       </form>
     </div>
     {% endfor %}
 
-    <h3>Add an Address</h3>
-    <form action="includes/addAddress.inc.php" method="post">
-      <input type="text" name="nickname" placeholder="Nickname" required />
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="text" name="street1" placeholder="Address 1" required />
-      <input type="text" name="street2" placeholder="Address 2" />
-      <input type="text" name="city" placeholder="City" required />
-      <input type="text" name="state" placeholder="State" required />
-      <input type="text" name="zip" placeholder="Zip Code" required />
-      <input type="text" name="country" placeholder="Country" required />
-      <input type="text" name="phone" placeholder="Phone Number" required />
-      <input type="submit" value="Submit" />
+    <h3 class="container">Add an Address</h3>
+    <form action="includes/addAddress.inc.php" method="post" class="vflex">
+      <div class="form-item width-850 hflex">
+      <input type="text" class="textbox dyn-width" name="nickname" placeholder="Nickname" required />
+      </div>
+
+      <div class="form-item width-850 hflex">
+      <input type="text" class="textbox dyn-width" name="name" placeholder="Name" required />
+      </div>
+
+      <div class="form-item width-850 hflex">
+      <input type="text" class="textbox dyn-width" name="street1" placeholder="Address 1" required />
+      <input type="text" class="textbox dyn-width" name="street2" placeholder="Address 2" />
+      </div>
+
+      <div class="form-item width-850 hflex">
+      <input type="text" class="textbox dyn-width" name="city" placeholder="City" required />
+      <input type="text" class="textbox dyn-width" name="state" placeholder="State" required />
+      <input type="text" class="textbox dyn-width" name="zip" placeholder="Zip Code" required />
+      <input type="text" class="textbox dyn-width" name="country" placeholder="Country" required />
+      </div>
+
+      <div class="form-item width-850 hflex">
+      <input type="text" class="textbox dyn-width" name="phone" placeholder="Phone Number" required />
+      </div>
+
+      <div class="form-item vflex vcenter">
+      <input type="submit" class="submit" value="Add Address" />
+      </div>
     </form>
   </div>
 </div>
