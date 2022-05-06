@@ -51,6 +51,12 @@ td {
 
 .item {
   display: flex;
+  padding-right: 30px;
+}
+
+.item_lower {
+  display: flex;
+  padding-right: 70px;
 }
 
 .items {
@@ -69,6 +75,7 @@ td {
 
 .color {
   display: flex;
+  padding-right: 30px;
 }
 
 .color_text {
@@ -86,7 +93,7 @@ td {
 .tshirt {
   padding-top: 3%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 
 .tshirt_input {
@@ -110,6 +117,12 @@ td {
   padding-right: 40px;
 }
 
+.lower {
+  padding-top: 5%;
+  display: flex;
+  justify-content: left;
+}
+
 .add {
   padding: 20px;
   font-size: 1em;
@@ -118,8 +131,66 @@ td {
   border: none;
   background-color: rgb(71, 71, 71);
   color: white;
+  width: 20%;
+}
+
+.red {
+  color: red;
 }
 
 .add:hover {
   background-color: rgb(69, 69, 233);
+}
+
+.tbl {
+  border-top: 2px solid black;
+  border: 1px solid black;
+}
+
+.tbl_table {
+  font-weight: 700;
+  border-top: 2px solid black;
+  border: 1px solid black;
+}
+
+.tbl_output {
+  width: 25%;
+  padding-top: 20px;
+}
+
+.tbl_sub {
+  padding-top: 30px;
+}
+
+.tbl_items {
+  width: 50%;
+  padding-top: 20px;
+}
+
+.output {
+  padding-top: 30px;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+}
+
+.total_final {
+  padding-right: 30px;
+}
+
+th {
+  text-align: left;
+  font-weight: 500;
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 10px 14px;
+}
+
+td {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 300;
+  padding: 0 10px;
 }
