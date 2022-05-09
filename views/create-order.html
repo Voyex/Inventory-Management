@@ -1,91 +1,108 @@
+<div class="container">
+  <div id="info">
+    <h1>Create Order</h1>
+    <!--<a href="">Update Profle</a>-->
+    <div class="tshirt">
+      <div class="item">
+      <datalist class="drop" id="mylist">
+          <option value="Red Pants"></option>
+          <option value="Blue Pants"></option>
+          <option value="Green Pants"></option>
+          <option value="Yellow Pants"></option>
+          <option value="Black Pants"></option>
+          <option value="Red T-Shirt"></option>
+          <option value="Blue T-Shirt"></option>
+          <option value="Green T-Shirt"></option>
+          <option value="Yellow T-Shirt"></option>
+          <option value="Black T-Shirt"></option>
+          <option value="Red Sweatshirt"></option>
+          <option value="Blue Sweatshirt"></option>
+          <option value="Green Sweatshirt"></option>
+          <option value="Yellow Sweatshirt"></option>
+          <option value="Black Sweatshirt"></option>
+          <option value="Red Socks"></option>
+          <option value="Blue Socks"></option>
+          <option value="Green Socks"></option>
+          <option value="Yellow Socks"></option>
+          <option value="Black Socks"></option>
+          <option value="Black Dress Shoes"></option>
+          <option value="Brown Dress Shoes"></option>
 
-    <div class="container">
-      <div id="info">
-        <h1>Create Order</h1>
-        <!--<a href="">Update Profle</a>-->
-        <div class="tshirt">
-          <div class="item">
-            <h2 class="item_text">Item of Clothing:</h2>
-            <input type="text" class="item_input" />
-          </div>
+       </datalist>
 
-          <div class="color">
-            <h2 class="color_text">Color:</h2>
-            <input type="text" class="tshirt_input" />
-          </div>
+        <h2 class="item_text">Item of Clothing:</h2>
 
-          <button class="add">Search</button>
-        </div>
-        <div class="lower">
-          <div class="item_lower">
-            <h2 class="item_text">Item to Order:</h2>
-            <h2 class="red">Black Dress Shoes</h2>
-          </div>
-
-          <div class="color">
-            <h2 class="color_text">Quantity:</h2>
-            <input type="text" class="tshirt_input" />
-          </div>
-
-          <button class="add">Add</button>
-        </div>
-      </div>
-      <div class="items">
-        <table class="tbl_items">
-          <tr class="tbl">
-            <th class="tbl">Item</th>
-            <th class="tbl">Price per Unit</th>
-            <th class="tbl">Quantity</th>
-            <th class="tbl">Subtotal</th>
-          </tr>
-          <tr class="tbl">
-            <td class="tbl">Red T-Shirt</td>
-            <td class="tbl">$20.00</td>
-            <td class="tbl">2</td>
-            <td class="tbl">$40.00</td>
-          </tr>
-          <tr class="tbl">
-            <td class="tbl">Blue Sweatshirt</td>
-            <td class="tbl">$35.00</td>
-            <td class="tbl">4</td>
-            <td class="tbl">$140.00</td>
-          </tr>
-          <tr class="tbl">
-            <td class="tbl">Black Pants</td>
-            <td class="tbl">$22.00</td>
-            <td class="tbl">3</td>
-            <td class="tbl">$66.00</td>
-          </tr>
-          
-        </table>
-
-        <div class="tbl_sub">
-          <table class="tbl_output">
-            <tr class="tbl">
-              <td class="tbl">Subtotal</th>
-              <td class="tbl">$246.00</th>
-            </tr>
-            <tr class="tbl">
-              <td class="tbl">Tax Rate: 6.5%</td>
-              <td class="tbl">$15.99</td>
-            </tr>
-            <tr class="tbl">
-              <td class="tbl">Shipping</td>
-              <td class="tbl">$20.00</td>
-            </tr>
-            <tr class="tbl">
-              <td class="tbl_total">Total</td>
-              <td class="tbl">$281.99</td>
-            </tr>
-            
-          </table>
-          <div class="output">
-            <h2 class="total_final">Total: $281.99</h2>
-          <button class="cart-btn">Order</button>
-          </div>
-          
+        <input type="search" class="item_input" list="mylist"/>
+        <div class="color">
+          <h2 class="color_text">Quantity:</h2>
+          <input type="text" class="quantity_input" />
+          <button class="add-btn">Add</button>
         </div>
       </div>
+
+      
+
+
+      <!--<button class="add">Search</button>-->
     </div>
+    
+  </div>
+  <div class="items">
+    <table class="tbl_items">
+      <tr class="tbl">
+        <th class="tbl">Item</th>
+        <th class="tbl">Price per Unit</th>
+        <th class="tbl">Quantity</th>
+        <th class="tbl">Subtotal</th>
+      </tr>
+      <tr class="tbl">
+        <td class="tbl">Red T-Shirt</td>
+        <td class="tbl">$20.00</td>
+        <td class="tbl">2</td>
+        <td class="tbl">$40.00</td>
+      </tr>
+      <tr class="tbl">
+        <td class="tbl">Blue Sweatshirt</td>
+        <td class="tbl">$35.00</td>
+        <td class="tbl">4</td>
+        <td class="tbl">$140.00</td>
+      </tr>
+      <tr class="tbl">
+        <td class="tbl">Black Pants</td>
+        <td class="tbl">$22.00</td>
+        <td class="tbl">3</td>
+        <td class="tbl">$66.00</td>
+      </tr>
+      
+    </table>
+
+    <div class="tbl_sub">
+      <table class="tbl_output">
+        <tr class="tbl">
+          <td class="tbl">Subtotal</th>
+          <td class="tbl">$246.00</th>
+        </tr>
+        <tr class="tbl">
+          <td class="tbl">Tax Rate: 6.5%</td>
+          <td class="tbl">$15.99</td>
+        </tr>
+        <tr class="tbl">
+          <td class="tbl">Shipping</td>
+          <td class="tbl">$20.00</td>
+        </tr>
+        <tr class="tbl">
+          <td class="tbl_total">Total</td>
+          <td class="tbl">$281.99</td>
+        </tr>
+        
+      </table>
+      <div class="output">
+        <h2 class="total_final">Total: $281.99</h2>
+      <button class="cart-btn">Order</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
     <script src="js/scripts.js"></script>
 
