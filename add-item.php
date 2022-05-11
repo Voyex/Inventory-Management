@@ -9,9 +9,15 @@ function customPageHeader()
 
 <?php }
 include_once('template/header.php');
+if (!isset($_GET['storeID'])) {
+  header('Location: admin.php?error=redierecterror');
+  exit();
+}
 
 // This renders "!template.html" from the views folder.
-echo $twig->render("add-item-form.html", []);
+echo $twig->render("add-item.html", [
+  
+]);
 
 include_once('template/footer.php');
 // Dont place any code here

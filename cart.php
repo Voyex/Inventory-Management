@@ -24,6 +24,7 @@ include_once('template/header.php');
                 <th>Sku Number</th>
                 <th>Amount</th>
                 <th>Quantity</th>
+                <th>Remove</th>
             </tr>
             <tr>
                 <td>T-Shirt</td>
@@ -31,6 +32,7 @@ include_once('template/header.php');
                 <td>324654</td>
                 <td>$15</td>
                 <td>2</td>
+                <td><a href="includes/removeCartItem.inc.php">Remove</a></td>
             </tr>
             <tr>
                 <td>Sweatshirt</td>
@@ -38,28 +40,27 @@ include_once('template/header.php');
                 <td>534631</td>
                 <td>$25</td>
                 <td>1</td>
+                <td><a href="includes/removeCartItem.inc.php">Remove</a></td>
             </tr>
             <tr>
                 <td>Jeans</td>
                 <td>Blue</td>
-
                 <td>342523</td>
                 <td>$20</td>
                 <td>4</td>
+                <td><a href="includes/removeCartItem.inc.php">Remove</a></td>
             </tr>
             <tr>
                 <td>Socks</td>
                 <td>White</td>
                 <td>123754</td>
                 <td>$10</td>
-
                 <td>5</td>
+                <td><a href="includes/removeCartItem.inc.php">Remove</a></td>
             </tr>
         </table>
         <h1>Total = $185</h1>
-        <button class="cart-btn">Edit Cart
-
-        </button>
+        <button class="cart-btn">Checkout</button>
     </div>
 </div>
 <!-- HTML goes here 

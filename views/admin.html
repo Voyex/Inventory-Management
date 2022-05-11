@@ -19,28 +19,31 @@
           <th>MSRP ($)</th>
           <th>Purchase Price ($)</th>
           <th>In Stock Qty.</th>
-          <th>Incoming Qty.</th>
-          <th>Outgoing Qty.</th>
+          <th>Color</th>
+          <th>Size</th>
           <th>Update</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
         {% for item in items %}
-        <form action="includes/updateItemQty.inc.php?itemID={{item.itemID}}&storeID={{selectedStoreID}}" method="post" autocomplete="off">
+        <form action="includes/updateItemQty.inc.php?id={{item.id}}" method="post" autocomplete="off">
             <tr>
                 <td class="sku">{{item.itemID}}</td>
                 <td class="title">{{item.title}}</td>
                 <td class="msrp">{{item.retail_price}}</td>
                 <td class="purchase-price">{{item.wholesale_price}}</td>
                 <td class="in-stock" ><input type="text" name="quantity" value="{{item.quantity}}" /></td>
-                <td class="incoming">0</td>
-                <td class="outgoing" contenteditable="true">0</td>
-                <td><input type="submit" name="submit" value="Update Item"/></td>
-                <td><a href="edit-item.php?id={{item.itemID}}">Edit</a></td>
-                <td><a href="includes/removeItem.inc.php?id={{item.itemID}}">Delete</a></td>
+                <td class="color">{{item.options.color}}</td>
+                <td class="size" contenteditable="true">{{item.options.size}}</td>
+                <td><input type="submit" name="submit" value="Update Qty"/></td>
+                <td><a href="edit-item.php?id={{item.id}}&itemID={{item.itemID}}">Edit</a></td>
+                <td><a href="includes/removeItem.inc.php?id={{item.id}}&itemID={{item.itemID}}">Delete</a></td>
             </tr>
         </form>
         {% endfor %}
       </table>
   </div>
-  <a href="add-item.php?storeID={{selectedStoreID}}" class="submit margin-20 font-1-2">Add Item</a>
+  <div class="margin-20 font-1-2">
+    <a href="add-item.php?storeID={{selectedStoreID}}" class="submit">Add Item</a>
+    <a href="view-orders.php" class="submit">View Orders</a>
+  </div>

@@ -1,7 +1,43 @@
-<div class="container vflex center">
-    <form action="includes/addItem.php?storeID={{storeID}}" class="vflex vcenter" method="post">
-        <div class="form-item">
-            
-        </div>
-    </form>
+<div class="content">
+    <div class="box1">
+        <form action="includes/addItem.inc.php">
+            <div>
+            <label for="product_image">Image 1:</label>
+            <input type="file" id="firstImageFile" name="product_image" accept="image/*" required>
+
+            <input type="radio" name="isPrimary" required>
+            <label for="isPrimary">Main Image</label>
+            </div>
+            <button type="button" onclick="addImageInput(this);">Add Another Image</button><br>
+
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="cars">Size:</label><br>
+            <input type="text" id="size" name="size" placeholder="Value" required><br>
+
+
+            <label for="cars">Color:</label><br>
+            <input type="text" id="color" name="color" placeholder="Value" required><br>
+
+            <label for="description">Markup Description:</label><br>
+            <textarea id="data" style="width: 757px; height: 170px" rows="10" cols="80" required>{{data}}</textarea><br>
+
+            <label for="quantity">Initial Quantity:</label><br>
+            <input type="text" id="quantity" name="quantity" required><br>
+
+            <label for="price">Item Price:</label><br>
+            <input type="text" id="price" name="price" required><br>
+
+            <label for="retail">Retail Price:</label><br>
+            <input type="text" id="retail" name="retail" required><br>
+
+            <label for="wholesale">Wholesale Price:</label><br>
+            <input type="text" id="wholesale" name="wholesale" required><br>
+
+            <br><input type="submit" class="add-item" value="Add item">
+        </form>
+    </div>
 </div>
+
+<script src="scripts/add-item.js"></script>

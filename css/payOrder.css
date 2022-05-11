@@ -1,8 +1,12 @@
-body {
+
+main {
   background-color: #ccffe6;
+  display: flex;
+  justify-content: center;
 }
 .container {
-  margin-left: 50px;
+  width: 80vw;
+  color: black;
 }
 #info {
   font-size: 18px;

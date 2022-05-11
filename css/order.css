@@ -1,8 +1,14 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
 .content{
     display: flex;
     flex-direction: row;
     color: black;
     padding: 20px;
+    width: 80vw;
 }
 table { 
     width: 100%;

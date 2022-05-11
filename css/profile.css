@@ -29,3 +29,9 @@ h4, p {
 .width-850 {
   width: 850px;
 }
+
+.right-corner {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}

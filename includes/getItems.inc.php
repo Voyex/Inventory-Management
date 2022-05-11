@@ -11,15 +11,50 @@
         }
 
         public function getAllStoreItems($storeID) {
-            $conn = $this->connect();
+            try {
+                $conn = $this->connect();
 
-            $sql = "SELECT * FROM store_item WHERE store_id = :storeID;";
-            $stmt = $conn->prepare($sql);
+                $sql = "SELECT * FROM store_item LEFT JOIN item ON item.itemID = store_item.item_id WHERE store_id = :storeID;";
+                $stmt = $conn->prepare($sql);
 
-            $stmt->bindValue(':storeID', $storeID, PDO::PARAM_STR);
-            $stmt->execute();
-    
-            return $stmt->fetchAll(PDO::FETCH_CLASS, "Item");
+                $stmt->bindValue(':storeID', $storeID, PDO::PARAM_STR);
+                $stmt->execute();
+        
+                return $stmt->fetchAll(PDO::FETCH_CLASS, "Item");
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+
+        public function getItemByID($itemID) {
+            try {
+                $conn = $this->connect();
+
+                $sql = "SELECT * FROM item WHERE itemID = :itemID";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(':itemID', $itemID, PDO::PARAM_STR);
+                $stmt->execute();
+
+                return $stmt->fetchAll(PDO::FETCH_CLASS, "Item")[0];
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+
+        public function getItemOptionsByID($itemID) {
+            try {
+                $conn = $this->connect();
+
+                $sql = "SELECT * FROM `item` RIGHT JOIN store_item ON item.itemID = store_item.item_id WHERE itemID = :itemID;";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(':itemID', $itemID, PDO::PARAM_STR);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_CLASS, "Item");
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
         }
 
         public function getSearchedItems($search) {
@@ -33,14 +68,6 @@
             $stmt->execute();
     
             return $stmt->fetchAll(PDO::FETCH_CLASS, "Item");
-        }
-
-        public function getItemByID($id) {
-            $conn = $this->connect();
-
-            $sql = "SELECT * FROM item WHERE itemID = $id;";
-
-            return $conn->query($sql)->fetchAll(PDO::FETCH_CLASS, "Item")[0];
         }
 
         public function getPrimaryImages() {
@@ -60,8 +87,14 @@
         public function getTotalQty($itemID) {
             $conn = $this->connect();
 
-            $sql = "SELECT SUM(quantity) FROM store_item WHERE item_id = $itemID;";
-            return $conn->query($sql)->fetch()[0];
+            $sql = "SELECT SUM(quantity) FROM store_item WHERE item_id = :itemID;";
+
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindValue(':itemID', $itemID, PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetch()[0];
         }
 
         /**
@@ -84,5 +117,42 @@
             }
     
             return $stmt->fetch()[0];
+        }
+
+        public function getMatchingItemOptionsByID($itemID, $option) {
+            try {
+                $conn = $this->connect();
+
+                $sql = "SELECT * FROM item RIGHT JOIN store_item ON item.itemID = store_item.item_id WHERE store_item.options LIKE :keyword AND itemID = :itemID;";
+
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(':keyword', '%'.$option.'%', PDO::PARAM_STR);
+                $stmt->bindValue(':itemID', $itemID, PDO::PARAM_STR);
+                $stmt->execute();
+        
+                return $stmt->fetchAll(PDO::FETCH_CLASS, "Item");
+            } catch(Exception $e) {
+                die($e->getMessage());
+            }
+        }
+
+        public function getTotalQTYMatchingOptions($itemID, $color, $size) {
+            try {
+                $conn = $this->connect();
+
+                $sql = "SELECT SUM(quantity) FROM item RIGHT JOIN store_item ON item.itemID = store_item.item_id WHERE store_item.options LIKE :color AND store_item.options LIKE :size AND itemID = :itemID;";
+
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(':color', '%"'.$color.'"%', PDO::PARAM_STR);
+                $stmt->bindValue(':size', '%"'.$size.'"%', PDO::PARAM_STR);
+                $stmt->bindValue(':itemID', $itemID, PDO::PARAM_STR);
+                $stmt->execute();
+        
+                return $stmt->fetch()[0];
+            } catch(Exception $e) {
+                die($e->getMessage());
+            }
         }
     }

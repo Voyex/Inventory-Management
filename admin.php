@@ -23,14 +23,16 @@ if(isset($_POST['storeID'])) {
     $selectedStoreID = $storeObj->getFirstStoreID();
 }
 
-$storeItems = $itemObj->getAllStoreItems($selectedStoreID);
+$items = $itemObj->getAllStoreItems($selectedStoreID);
 $stores = $storeObj->getAllStores();
 
-$items = array();
-// Gets the items that correlate with the store items.
-foreach($storeItems as $storeIndex => $storeItem) {
-    $items[] = $itemObj->getItemByID($storeItem->item_id);
-    end($items)->quantity = $storeItem->quantity; //Adds the quantity to the item
+// turns the options into a JSON object.
+try {
+    foreach ($items as $itemIndex => $item) {
+        $item->options = json_decode($item->options);
+    }
+} catch (Exception $e) {
+    die($e->getMessage());
 }
 
 
